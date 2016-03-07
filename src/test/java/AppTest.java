@@ -30,4 +30,13 @@ public class AppTest extends FluentTest {
     click("a", withText("Login"));
     assertThat(pageSource()).contains("Returning User");
   }
+
+  @Test
+  public void newUser_isCreatedProperly() {
+    goTo("http://localhost:4567/log-in");
+    fill("#new-name").with("michelle202");
+    fill("#new-password").with("123");
+    submit("#create-new-user");
+    assertThat(pageSource()).contains("Welcome, michelle202");
+  }
 }
