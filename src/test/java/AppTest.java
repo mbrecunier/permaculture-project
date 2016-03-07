@@ -54,6 +54,16 @@ public class AppTest extends FluentTest {
     fill("#password").with("321");
     submit("#sign-in");
     assertThat(pageSource()).contains("Welcome, Michelle");
+  }
 
+  @Test
+  public void returningUsers_wrongPasswordRedirects() {
+    User testUser = new User("Michelle", "321");
+    testUser.save();
+    goTo("http://localhost:4567/log-in");
+    click("option", withText("Michelle"));
+    fill("#password").with("111");
+    submit("#sign-in");
+    assertThat(pageSource()).contains("User Name and Password do not match");
   }
 }
