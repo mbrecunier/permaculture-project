@@ -3,3 +3,31 @@
 or make a new user
 
 (leads to "personalized" home page ) -->
+
+<h2>Returning User</h2>
+
+<form action="/sign-in" method="post">
+  <div class="form-group">
+    <label for="name">User Name</label>
+    <input type="text" id="name" name="name" required>
+  </div>
+  <div class="form-group">
+    <label for="password">Password</label>
+    <input type="password" id="password" name="password" required>
+  </div>
+  <button type="submit" id="sign-in">Log In</button>
+</form>
+
+<h2>New User</h2>
+
+<form action="/new-user" method="post">
+  <div class="form-group">
+    <label for="name">User Name</label>
+    <input type="text" id="name" name="name" required>
+  </div>
+  <div class="form-group">
+    <label for="password">Password</label>
+    <input type="password" id="password" name="password" required>
+  </div>
+  <button type="submit" id="create-new-user">Create New User</button>
+</form>
