@@ -69,7 +69,6 @@ public class App {
       HashMap<String, Object> model = new HashMap<String, Object>();
       User currentUser = request.session().attribute("currentUser");
       model.put("currentUser", currentUser);
-      //user plants
       model.put("template", "templates/planter.vtl");
       return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());
@@ -93,6 +92,17 @@ public class App {
     post("/logout", (request, response) -> {
       request.session().attribute("currentUser", null);
       response.redirect("/");
+      return null;
+    });
+
+    post("/favorite", (request, response) -> {
+      HashMap<String, Object> model = new HashMap<String, Object>();
+      User currentUser = request.session().attribute("currentUser");
+      int plantId = Integer.parseInt(request.queryParams("plantId"));
+        if(currentUser != null) {
+          currentUser.addPlant(plantId);
+        }
+      response.redirect("/gallery");
       return null;
     });
 

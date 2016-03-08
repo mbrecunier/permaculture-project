@@ -71,25 +71,28 @@ public class AppTest extends FluentTest {
   public void plantGallery_loadsPlantInformation() {
     User testUser = new User("Michelle", "321");
     testUser.save();
+    Plant testPlant = new Plant("Arugula", "May", "http://arugula.com", "vitamin K");
+    testPlant.save();
     goTo("http://localhost:4567/log-in");
     fill("#password").with("321");
     submit("#sign-in");
     click("a", withText("Gallery"));
-    assertThat(pageSource()).contains("tomatoes");
+    assertThat(pageSource()).contains("Arugula");
   }
-  //
-  // @Test
-  // public void personalPlanter_holdsFavoritedPlants() {
-  //   User testUser = new User("Michelle", "321");
-  //   testUser.save();
-  //   goTo("http://localhost:4567/log-in");
-  //   fill("#password").with("321");
-  //   submit("#sign-in");
-  //   click("a", withText("Gallery"));
-  //   ((favorite a plant))
-  //   goTo("http://localhost:4567/planter");
-  //   assertThat(pageSource()).contains("");
-  // }
+
+  @Test
+  public void personalPlanter_holdsFavoritedPlants() {
+    User testUser = new User("Michelle", "321");
+    testUser.save();
+    Plant testPlant = new Plant("Arugula", "May", "http://arugula.com", "vitamin K");
+    testPlant.save();
+    goTo("http://localhost:4567/log-in");
+    fill("#password").with("321");
+    submit("#sign-in");
+    testUser.addPlant(testPlant.getId());
+    goTo("http://localhost:4567/planter");
+    assertThat(pageSource()).contains("Arugula");
+  }
 
   @Test
   public void aboutTest() {
@@ -101,6 +104,19 @@ public class AppTest extends FluentTest {
   public void tipsTest() {
     goTo("http://localhost:4567/tips");
     assertThat(pageSource()).contains("Garden Tips");
+  }
+
+  @Test
+  public void logout_nameWillNoLongerDisplay() {
+    User testUser = new User("Michelle", "321");
+    testUser.save();
+    goTo("http://localhost:4567/log-in");
+    click("option", withText("Michelle"));
+    fill("#password").with("321");
+    submit("#sign-in");
+    assertThat(pageSource()).contains("Welcome, Michelle");
+    submit("#logout");
+    assertThat(pageSource()).doesNotContain("Michelle");
   }
 
 }
