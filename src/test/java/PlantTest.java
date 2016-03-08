@@ -55,4 +55,19 @@ public class PlantTest {
     testPlant.save();
     assertTrue(Plant.all().contains(testPlant));
   }
+
+  @Test
+  public void find_returnsPlantFromDatabase() {
+    Plant testPlant = new Plant("Arugula", "May", "http://arugula.com", "vitamin K");
+    testPlant.save();
+    assertEquals(testPlant, Plant.find(testPlant.getId()));
+  }
+
+  @Test
+  public void delete_deletesPlantFromDatabase() {
+    Plant testPlant = new Plant("Arugula", "May", "http://arugula.com", "vitamin K");
+    testPlant.save();
+    testPlant.delete();
+    assertFalse(Plant.all().contains(testPlant));
+  }
 }
