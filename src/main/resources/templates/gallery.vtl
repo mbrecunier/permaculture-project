@@ -2,9 +2,41 @@
   <h4>User is $currentUser.getName()</h4>
 #end
 <h2>Plant Gallery</h2>
+<div class="galleryContainer">
 
-<ul>
 #foreach ($plant in $plants)
-  <li>$plant.getName()</li>
+<form id="favorite-plant" action="/favorite" method="post"><input type="hidden" name="plantId" value="$plant.getId()"</form>
+  <div class="plantCard">
+    <div class="plantModal01">
+      <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <h4 class="modal-title" id="myModalLabel">$plant.getName()</h4>
+            </div>
+            <div class="modal-body">
+              <img class="plantImg" src="$plant.getImgUrl()" />
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+              <button type="submit" form="favorite-plant" class="btn btn-primary">Add To Planter</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <a href id="modalClickthru"  data-toggle="modal" data-target="#myModal"><img      class="plantImg" src="$plant.getImgUrl()" /></a>
+    <div class="plantInfo">
+      <div class="detailsTitle">
+        <span>$plant.getName()</span><br/>
+        <small>$plant.getPlantingSeason()</small>
+      </div>
+      <div class="detailsBody">
+        <p>$plant.getHealthBenefits()</p>
+      </div>
+    </div>
+  </div>
 #end
-</ul>
+</div>
