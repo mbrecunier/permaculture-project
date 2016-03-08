@@ -70,12 +70,12 @@ public class User {
     }
   }
 
-  public void addPlant(Plant newPlant) {
+  public void addPlant(int plantId) {
     try(Connection con = DB.sql2o.open()) {
       String sql = "INSERT INTO users_plants (user_id, plant_id) VALUES (:user_id, :plant_id)";
       con.createQuery(sql)
         .addParameter("user_id", this.id)
-        .addParameter("plant_id", newPlant.getId())
+        .addParameter("plant_id", plantId)
         .executeUpdate();
     }
   }
