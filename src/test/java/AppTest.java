@@ -91,4 +91,16 @@ public class AppTest extends FluentTest {
   //   assertThat(pageSource()).contains("");
   // }
 
+  @Test
+  public void aboutTest() {
+    goTo("http://localhost:4567/about");
+    assertThat(pageSource()).contains("About Permaculture");
+  }
+
+  @Test
+  public void tipsTest() {
+    goTo("http://localhost:4567/tips");
+    assertThat(pageSource()).contains("Garden Tips");
+  }
+
 }
