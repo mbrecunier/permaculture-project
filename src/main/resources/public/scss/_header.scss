@@ -1,82 +1,15 @@
-// .container-fluid {
-//   display: flex;
-//   align-items: flex-start;
-//   height: 80px;
-//   background-color: $card-color;
-//   border: 1px solid black;
-//   padding: 10px;
-//
-//   .links {
-//     // display: none;
-//
-//     @media (min-width: 690px) {
-//       // display: block;
-//         li {
-//           float: left;
-//           // top: 25px;
-//           // left: -130px;
-//           //   a {
-//           //     height: 30px;
-//           //     padding: 10px;
-//           //   }
-//         }
-//     }
-//   }
-//
-//
-//
-//   a#terra.navbar-brand{
-//     display: flex;
-//     margin: 0px;
-//     padding-top: 5px;
-//     color: white;
-//     font-size: 20pt;
-//     align-self: center;
-//   }
-//
-// button[type="submit"] {
-//   position: relative;
-//   height: 20px;
-//   width: 50px;;
-//   font-size: 9px;
-//   padding: 1px;
-//   left: 255px;
-//   top: -17px;
-//   margin-left: 3px;
-//
-//   @media (min-width: 690px) {
-//     left: 400px;
-//   }
-//// }
-//
-// input[type="text"] {
-//   position: absolute;
-//   height: 20px;
-//   width: 175px;
-//   left: 80px;
-//   top: 45px;
-//
-//   @media (min-width: 690px) {
-//     left: 400px;
-//     top: 0;
-//   }
-// }
-//
-// form.navbar-form.navbar-left {
-//   border: none;
-// }
-// }
-
 header {
   position: fixed;
   display: inline-block;
-  height: 80px;
+  height: 100px;
   background-color: $card-color;
   border: 1px solid black;
   padding: 10px;
   width: 100%;
   z-index: 99999;
     // background-image: url("../img/leaf.png");
+  @include linear-gradient($buttonColor, $card-color);
+  @include linear-gradient(50deg, $buttonColor 0%, $card-color 100%);
 
 
   img {
@@ -87,7 +20,7 @@ header {
   }
 
   h3 {
-    color: white;
+    color: $fontColor;
     margin-left: 70px;
     margin-top: 5px;
     font-size: 30pt;
@@ -95,35 +28,63 @@ header {
 
   #hamburger {
     position: absolute;
-    right: 10px;
-    top: -50px;
-    font-size: 35px;
-    color: white;
-    border: 2pt solid white;
+    right: 20px;
+    top: -58px;
+    font-size: 30px;
+    color: $fontColor;
+    border: 2pt solid $fontColor;
     border-radius: 5pt;
     padding: 5px 2px;
     padding-bottom: 7px;
+
+    @media (min-width: 768px) {
+      display: none;
+    }
+  }
+
+  #logout {
+    display: none;
   }
 
   .dropdown {
-    background-color: black;
+    @include linear-gradient($buttonColor, $card-color);
+    @include linear-gradient(50deg, $buttonColor 0%, $card-color 100%);
+    margin-top: 10px;
+
+    @media (min-width: 768px) {
+      display: none;
+    }
   }
 
   .expandedNav {
     display: none;
+
+    @media (min-width: 768px) {
+      display: block;
+
+      ul {
+        position: absolute;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        height: 30px;
+        border: 1pt solid black;
+        width: 100vw;
+        top: 19.5px;
+        left: -11px;
+        @include linear-gradient($buttonColor, $card-color);
+        @include linear-gradient(50deg, $buttonColor 0%, $card-color 100%);
+
+        li {
+          list-style-type: none;
+          padding-top: 4px;
+
+          a {
+            color: $fontColor;
+            margin-top: 35px;
+          }
+        }
+      }
+    }
   }
-
-  // .toggleNav {
-  //   position: absolute;
-  //   right: 15px;
-  //   top: 10px;
-  //   font-size: 40px;
-  //   color: white;
-  //
-  //     &:hover {
-  //       text-decoration: none;
-  //     }
-  // }
-
-
 }
