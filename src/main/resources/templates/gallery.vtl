@@ -2,3 +2,9 @@
   <h4>User is $currentUser.getName()</h4>
 #end
 <h2>Plant Gallery</h2>
+
+<ul>
+#foreach ($plant in $plants)
+  <li>$plant.getName()</li>
+#end
+</ul>

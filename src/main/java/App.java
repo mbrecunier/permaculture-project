@@ -59,7 +59,8 @@ public class App {
       HashMap<String, Object> model = new HashMap<String, Object>();
       User currentUser = request.session().attribute("currentUser");
       model.put("currentUser", currentUser);
-      //all plants
+      List<Plant> plants = Plant.all();
+      model.put("plants", plants);
       model.put("template", "templates/gallery.vtl");
       return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());

@@ -67,16 +67,16 @@ public class AppTest extends FluentTest {
     assertThat(pageSource()).contains("User Name and Password do not match");
   }
 
-  // @Test
-  // public void plantGallery_loadsPlantInformation() {
-  //   User testUser = new User("Michelle", "321");
-  //   testUser.save();
-  //   goTo("http://localhost:4567/log-in");
-  //   fill("#password").with("321");
-  //   submit("#sign-in");
-  //   click("a", withText("Gallery"));
-  //   assertThat(pageSource()).contains("");
-  // }
+  @Test
+  public void plantGallery_loadsPlantInformation() {
+    User testUser = new User("Michelle", "321");
+    testUser.save();
+    goTo("http://localhost:4567/log-in");
+    fill("#password").with("321");
+    submit("#sign-in");
+    click("a", withText("Gallery"));
+    assertThat(pageSource()).contains("tomatoes");
+  }
   //
   // @Test
   // public void personalPlanter_holdsFavoritedPlants() {
