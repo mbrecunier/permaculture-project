@@ -356,21 +356,21 @@ SELECT pg_catalog.setval('nutrientneeds_id_seq', 1, false);
 --
 
 COPY plants (id, plant_name, planting_season, img_url, health_benefits) FROM stdin;
-1	tomatoes	After last frost	http://www.agraz.com/blog/wp-content/uploads/2013/07/meT6hHG1.jpg	Source of vitamin C. Lycopene linked to cancer prevention.
-2	liberty apples	Early Spring	http://caseytrees.org/wp-content/uploads/2012/02/apple-form.jpg	Twice the antioxidant value of golden delicous apples.
-3	kale	Early Spring and Late Fall	http://thetrustygardener.com/blog/wp-content/uploads/2012/03/Kale-3-496.png	Vitamin A: 206% of the RDA (from beta-carotene). Vitamin K: 684% of the RDA
-4	broccoli	Early Spring and Fall	http://www.foodswinesfromspain.com/spanishfoodwine/wcm/idc/groups/public/documents/imagen/odix/mdc2/~edisp/1821076141.jpg	Great source of vitamins K and C. Good source of folate.
-5	beets	March/April	http://www.readthespirit.com/feed-the-spirit/wp-content/uploads/sites/19/2014/10/beets-red-ace-flickr.jpg	Great source of vitamins C and Iron. Good source of magnesium.
-6	romaine lettuce	March/April	http://www.theinnovationdiaries.com/wp-content/uploads/2011/08/growing-lettuce.jpg	\N
-7	cucumber	Spring: no less than two week after last frost 	http://i.parkseed.com/images/xxl/05578-pk-p1.jpg	Excellent source of vitamin K and molybdenum. They are also a very good source of the pantothenic acid and contain copper, potassium, manganese, vitamin C, phosphorus, magnesium, biotin, and vitamin B1
-8	carrots	April	http://www.motherearthnews.com/~/media/Images/MEN/Editorial/Blogs/Organic%20Gardening/Measure%20Garden%20Soil%20Compaction%20With%20a%20Carrot%20Test/20150706carrotshapes.jpg?h=366&w=550&la=en	Rich in vitamin A, Vitamin C, Vitamin K, vitamin B8, pantothenic acid, folate, potassium, iron, copper, and manganese
-9	cauliflower	Fall 6-8 weeks before fall frost	http://www.sloatgardens.com/wp-content/uploads/2014/02/shutterstock_109766633.jpg	\N
-10	onions	Plant as soon as the ground can be worked in the spring	http://www.babyfit.com/babyfit/member_pics/onion_plants.jpg	High in vitamin C, onions are a good source of dietary fiber, and folic acid.
-11	potatoes	Early Spring	http://blueplanetcustodians.com/wp-content/uploads/2014/07/potato-plant.jpg	Potatoes are a very good source of vitamin B6 and a good source ofpotassium, copper, vitamin C, manganese, phosphorus, niacin, dietary fiber, and pantothenic acid.
-12	runner bean	Early Spring (perennial)	http://www.sherckseeds.com/pages/wp-content/uploads/2014/11/scarlet-runner-1000-by-750.jpg	Protein, Thiamin, Riboflavin, Niacin, Vitamin B6, Calcium, Iron, Magnesium, Phosphorus, Potassium and Copper, and a very good source of Dietary Fiber, Vitamin A, Vitamin C, Vitamin K, Folate and Manganese
-13	arugula	Early Spring or Fall	http://p-fst1.pixstatic.com/5254387e697ab0615600d3b6._w.540_h.405_s.fit_.jpg	It is good source of Protein, Thiamin, Riboflavin, Vitamin B6, Pantothenic Acid, Zinc and Copper, and a very good source of Dietary Fiber, Vitamin A, Vitamin C, Vitamin K
-14	strawberries	Early Spring	http://cf.ltkcdn.net/garden/images/std/147644-400x300-Closeup-of-strawberries.jpg	Have a unique combination of antioxidant and anti-inflammatory nutrients. They are also an excellent source of dietary fiber and Vitamins C and K. AND, a very good source of manganese, pantothenic acid, vitamin B1, and iodine. AND, a good source of folic acid, biotin, and vitamin B6!
-15	squash	summer and winter varietals	https://utmarketgarden.files.wordpress.com/2011/07/healthy-squash.jpg	Potassium, Vitamin C, Fiber, Vitamin B-6, Vitamin A, Magnesium, Iron
+1	tomatoes	After last frost	img/tomato.jpg	Source of vitamin C. Lycopene linked to cancer prevention.
+2	liberty apples	Early Spring	img/appletree.jpg	Twice the antioxidant value of golden delicous apples.
+3	kale	Early Spring and Late Fall	img/kale.jpg	Vitamin A: 206% of the RDA (from beta-carotene). Vitamin K: 684% of the RDA
+4	broccoli	Early Spring and Fall	img/broccoli.jpg	Great source of vitamins K and C. Good source of folate.
+5	beets	March/April	img/beets.jpg	Great source of vitamins C and Iron. Good source of magnesium.
+6	romaine lettuce	March/April	img/romainelettuce.jpg	\N
+7	cucumber	Spring: no less than two week after last frost 	img/cucumber.jpg	Excellent source of vitamin K and molybdenum. They are also a very good source of the pantothenic acid and contain copper, potassium, manganese, vitamin C, phosphorus, magnesium, biotin, and vitamin B1
+8	carrots	April	img/carrot.jpg	Rich in vitamin A, Vitamin C, Vitamin K, vitamin B8, pantothenic acid, folate, potassium, iron, copper, and manganese
+9	cauliflower	Fall 6-8 weeks before fall frost	img/cauliflower.jpg	\N
+10	onions	Plant as soon as the ground can be worked in the spring	img/onion.jpg	High in vitamin C, onions are a good source of dietary fiber, and folic acid.
+11	potatoes	Early Spring	img/potato.jpg	Potatoes are a very good source of vitamin B6 and a good source ofpotassium, copper, vitamin C, manganese, phosphorus, niacin, dietary fiber, and pantothenic acid.
+12	runner bean	Early Spring (perennial)	img/runnerbean.jpg	Protein, Thiamin, Riboflavin, Niacin, Vitamin B6, Calcium, Iron, Magnesium, Phosphorus, Potassium and Copper, and a very good source of Dietary Fiber, Vitamin A, Vitamin C, Vitamin K, Folate and Manganese
+13	arugula	Early Spring or Fall	img/arugula.jpg	It is good source of Protein, Thiamin, Riboflavin, Vitamin B6, Pantothenic Acid, Zinc and Copper, and a very good source of Dietary Fiber, Vitamin A, Vitamin C, Vitamin K
+14	strawberries	Early Spring	img/strawberries.jpg	Have a unique combination of antioxidant and anti-inflammatory nutrients. They are also an excellent source of dietary fiber and Vitamins C and K. AND, a very good source of manganese, pantothenic acid, vitamin B1, and iodine. AND, a good source of folic acid, biotin, and vitamin B6!
+15	squash	summer and winter varietals	img/squash.jpg	Potassium, Vitamin C, Fiber, Vitamin B-6, Vitamin A, Magnesium, Iron
 \.
 
 
