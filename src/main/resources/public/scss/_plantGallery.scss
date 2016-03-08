@@ -6,6 +6,10 @@
  justify-content: center;
  padding-top: 100px;
 
+   @media (min-width: 768px) {
+     padding-top: 140px;
+   }
+
 
   .plantCard {
     font-family: "Raleway", "Helvetica Neue", Helvetica, Arial, sans-serif;
