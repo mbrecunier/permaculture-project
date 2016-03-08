@@ -7,17 +7,24 @@
   box-sizing: border-box; }
 
 .body {
-  background: #C8C8A9; }
+  background-image: url("../img/leaf.png");
+  background-repeat: repeat; }
 
 header {
   position: fixed;
   display: inline-block;
-  height: 80px;
+  height: 100px;
   background-color: #7DB5A5;
   border: 1px solid black;
   padding: 10px;
   width: 100%;
-  z-index: 99999; }
+  z-index: 99999;
+  background-color: #AFA47E;
+  background-image: -webkit-linear-gradient(#AFA47E, #7DB5A5);
+  background-image: linear-gradient(#AFA47E, #7DB5A5);
+  background-color: #AFA47E;
+  background-image: -webkit-linear-gradient(-320deg, #AFA47E 0%, #7DB5A5 100%);
+  background-image: linear-gradient(50deg,#AFA47E 0%, #7DB5A5 100%); }
   header img {
     height: 50px;
     float: left;
@@ -30,18 +37,57 @@ header {
     font-size: 30pt; }
   header #hamburger {
     position: absolute;
-    right: 10px;
-    top: -50px;
-    font-size: 35px;
+    right: 20px;
+    top: -58px;
+    font-size: 30px;
     color: white;
     border: 2pt solid white;
     border-radius: 5pt;
     padding: 5px 2px;
     padding-bottom: 7px; }
+    @media (min-width: 768px) {
+      header #hamburger {
+        display: none; } }
+  header #logout {
+    display: none; }
   header .dropdown {
-    background-color: black; }
+    background-color: #AFA47E;
+    background-image: -webkit-linear-gradient(#AFA47E, #7DB5A5);
+    background-image: linear-gradient(#AFA47E, #7DB5A5);
+    background-color: #AFA47E;
+    background-image: -webkit-linear-gradient(-320deg, #AFA47E 0%, #7DB5A5 100%);
+    background-image: linear-gradient(50deg,#AFA47E 0%, #7DB5A5 100%);
+    margin-top: 10px; }
+    @media (min-width: 768px) {
+      header .dropdown {
+        display: none; } }
   header .expandedNav {
     display: none; }
+    @media (min-width: 768px) {
+      header .expandedNav {
+        display: block; }
+        header .expandedNav ul {
+          position: absolute;
+          display: flex;
+          flex-direction: row;
+          justify-content: space-around;
+          height: 30px;
+          border: 1pt solid black;
+          width: 100vw;
+          top: 19.5px;
+          left: -11px;
+          background-color: #AFA47E;
+          background-image: -webkit-linear-gradient(#AFA47E, #7DB5A5);
+          background-image: linear-gradient(#AFA47E, #7DB5A5);
+          background-color: #AFA47E;
+          background-image: -webkit-linear-gradient(-320deg, #AFA47E 0%, #7DB5A5 100%);
+          background-image: linear-gradient(50deg,#AFA47E 0%, #7DB5A5 100%); }
+          header .expandedNav ul li {
+            list-style-type: none;
+            padding-top: 4px; }
+            header .expandedNav ul li a {
+              color: white;
+              margin-top: 35px; } }
 
 .galleryContainer {
   display: flex;
@@ -49,6 +95,9 @@ header {
   flex-direction: row;
   justify-content: center;
   padding-top: 100px; }
+  @media (min-width: 768px) {
+    .galleryContainer {
+      padding-top: 140px; } }
   .galleryContainer .plantCard {
     font-family: "Raleway", "Helvetica Neue", Helvetica, Arial, sans-serif;
     position: relative;
@@ -89,5 +138,12 @@ header {
       .galleryContainer .plantCard .plantInfo .detailsBody {
         margin: 19px;
         text-align: center; }
+
+.hero {
+  display: flex; }
+  .hero img {
+    width: 2500px;
+    height: auto;
+    overflow: auto; }
 
 /*# sourceMappingURL=main.css.map */
