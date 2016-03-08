@@ -1,0 +1,12 @@
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+
+
+@import "_variables.scss";
+@import "_globals.scss";
+@import "_header.scss";
+@import "_plantGallery.scss";

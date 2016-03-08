@@ -1,10 +1,46 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Portland Permaculture Project</title>
-    <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css'>
-  </head>
+<head>
+  <link rel="stylesheet" href="css/main.css" media="screen" title="no title" charset="utf-8">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" media="screen" title="no title" charset="utf-8">
+  <script src="js/jquery-1.12.0.js"></script>
+  <script src="js/scripts.js"></script>
+  <meta charset="utf-8">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  <link rel="icon" href="favicon.ico">
+  <title>Terra Perma</title>
+</head>
   <body>
+    <header>
+      <img id ="world" src="img/world.png">
+      <h3>Terra Perma</h3>
+
+      <ul class="nav navbar-nav">
+        <!-- <li class="active"><a href="#">Home <span class="sr-only">(current)</span></a></li>
+        <li><a href="#">Link</a></li> -->
+        <li class="dropdown">
+          <a href="#" id="hamburger" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">☰</span></a>
+          <ul class="dropdown-menu">
+            <li><a href="/">Home</a></li>
+            <li><a href="/about">About Permaculture</a></li>
+            <li><a href="/gallery">Plant Gallery</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="/tips">Tips & Tricks</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="/log-in">Login/New Users</a></li>
+          </ul>
+
+          <div class="expandedNav">
+            <ul class="">
+              <li><a href="/">Home</a></li>
+              <li><a href="/about">About Permaculture</a></li>
+              <li><a href="/gallery">Plant Gallery</a></li>
+              <li role="separator" class="divider"></li>
+              <li><a href="/tips">Tips & Tricks</a></li>
+              <li role="separator" class="divider"></li>
+              <li><a href="/login">Login/New Users</a></li>
+            </ul>
+          </header>
     <div class="container">
 
       #parse( $template )
