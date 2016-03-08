@@ -60,4 +60,13 @@ public class UserTest {
     assertFalse(User.all().contains(testUser));
   }
 
+  @Test
+  public void addPlant_attachesPlantToUser() {
+    User testUser = new User("Michelle", "p@$$w0rd");
+    testUser.save();
+    Plant testPlant = Plant.find(1);
+    testUser.addPlant(testPlant);
+    assertTrue(testUser.getPlants().contains(testPlant));
+  }
+
 }
