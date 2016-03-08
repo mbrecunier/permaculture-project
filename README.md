@@ -26,7 +26,7 @@ This site provides information for people looking to start their own permacultur
 * Open a new terminal window to start Postgres server:
     * $ postgres
 * Open a new terminal window to build the database:
-    * $ psql name < name.sql;
+    * $ psql permaculture < permaculture.sql;
 * In the top level of the cloned directory, run the following command in your terminal:
     * $ gradle run
 * Open your web browser of choice to localhost:4567
