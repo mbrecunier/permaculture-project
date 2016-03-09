@@ -1,0 +1,42 @@
+#if($currentUser)
+  <h4>User is $currentUser.getName()</h4>
+#else
+  <h4>You must log in to add tools</h4>
+#end
+<h2>Tool Gallery</h2>
+<div class="galleryContainer">
+
+#foreach ($tool in $tools)
+  <div class="plantCard">
+    <div class="plantModal01">
+      <div class="modal fade" id="$tool.getId()" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <h4 class="modal-title" id="myModalLabel">$tool.getName()</h4>
+            </div>
+            <div class="modal-body">
+              <img class="plantImg" src="$tool.getImgUrl()" />
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+              <button type="submit" form="$tool.getName()" class="btn btn-primary">Add To Planter</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <a href id="modalClickthru"  data-toggle="modal" data-target="#$tool.getId()"><img      class="plantImg" src="$tool.getImgUrl()" /></a>
+    <div class="plantInfo">
+      <div class="detailsTitle">
+        <span>$tool.getName()</span><br/>
+      </div>
+      <div class="detailsBody">
+        <form id="$tool.getName()" action="/favorite-tool" method="post"><input type="hidden" name="toolId" value="$tool.getId()"></form>
+      </div>
+    </div>
+  </div>
+#end
+</div>

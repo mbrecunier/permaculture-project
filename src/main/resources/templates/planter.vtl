@@ -9,3 +9,10 @@
   <li>$plant.getName()</li>
 #end
 </ul>
+
+
+<ul>
+#foreach ($tool in $currentUser.getTools())
+  <li>$tool.getName()</li>
+#end
+</ul>
