@@ -10,30 +10,30 @@ public class PlantTest {
 
   @Test
   public void plant_instantiatesCorrectly_true() {
-    Plant testPlant = new Plant("Arugula", "May", "http://arugula.com", "vitamin K");
+    Plant testPlant = new Plant("Arugula", "May", "http://arugula.com", "vitamin K", "beets", "strawberries");
     assertTrue(testPlant instanceof Plant);
   }
   @Test
   public void getName_returnsName_string() {
-    Plant testPlant = new Plant("Arugula", "May", "http://arugula.com", "vitamin K");
+    Plant testPlant = new Plant("Arugula", "May", "http://arugula.com", "vitamin K", "beets", "strawberries");
     assertEquals("Arugula", testPlant.getName());
   }
 
   @Test
   public void getPlantingSeason_returnsSeason_string() {
-    Plant testPlant = new Plant("Arugula", "May", "http://arugula.com", "vitamin K");
+    Plant testPlant = new Plant("Arugula", "May", "http://arugula.com", "vitamin K", "beets", "strawberries");
     assertEquals("May", testPlant.getPlantingSeason());
   }
 
   @Test
   public void getImgUrl_returnsUrl_string() {
-    Plant testPlant = new Plant("Arugula", "May", "http://arugula.com", "vitamin K");
+    Plant testPlant = new Plant("Arugula", "May", "http://arugula.com", "vitamin K", "beets", "strawberries");
     assertEquals("http://arugula.com", testPlant.getImgUrl());
   }
 
   @Test
   public void getHealthBenefits_returnsBenefits_string() {
-    Plant testPlant = new Plant("Arugula", "May", "http://arugula.com", "vitamin K");
+    Plant testPlant = new Plant("Arugula", "May", "http://arugula.com", "vitamin K", "beets", "strawberries");
     assertEquals("vitamin K", testPlant.getHealthBenefits());
   }
 
@@ -44,28 +44,28 @@ public class PlantTest {
 
   @Test
   public void equals_returnsTrueIfPlantsAreTheSame() {
-    Plant testPlant = new Plant("Arugula", "May", "http://arugula.com", "vitamin K");
-    Plant testPlant2 = new Plant("Arugula", "May", "http://arugula.com", "vitamin K");
+    Plant testPlant = new Plant("Arugula", "May", "http://arugula.com", "vitamin K", "beets", "strawberries");
+    Plant testPlant2 = new Plant("Arugula", "May", "http://arugula.com", "vitamin K", "beets", "strawberries");
     assertTrue(testPlant.equals(testPlant2));
   }
 
   @Test
   public void saves_savesUserToDatabase() {
-    Plant testPlant = new Plant("Arugula", "May", "http://arugula.com", "vitamin K");
+    Plant testPlant = new Plant("Arugula", "May", "http://arugula.com", "vitamin K", "beets", "strawberries");
     testPlant.save();
     assertTrue(Plant.all().contains(testPlant));
   }
 
   @Test
   public void find_returnsPlantFromDatabase() {
-    Plant testPlant = new Plant("Arugula", "May", "http://arugula.com", "vitamin K");
+    Plant testPlant = new Plant("Arugula", "May", "http://arugula.com", "vitamin K", "beets", "strawberries");
     testPlant.save();
     assertEquals(testPlant, Plant.find(testPlant.getId()));
   }
 
   @Test
   public void delete_deletesPlantFromDatabase() {
-    Plant testPlant = new Plant("Arugula", "May", "http://arugula.com", "vitamin K");
+    Plant testPlant = new Plant("Arugula", "May", "http://arugula.com", "vitamin K", "beets", "strawberries");
     testPlant.save();
     testPlant.delete();
     assertFalse(Plant.all().contains(testPlant));

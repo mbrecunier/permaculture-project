@@ -64,7 +64,7 @@ public class AppTest extends FluentTest {
   public void plantGallery_loadsPlantInformation() {
     User testUser = new User("Michelle", "321");
     testUser.save();
-    Plant testPlant = new Plant("Arugula", "May", "http://arugula.com", "vitamin K");
+    Plant testPlant = new Plant("Arugula", "May", "http://arugula.com", "vitamin K", "beets", "strawberries");
     testPlant.save();
     goTo("http://localhost:4567/log-in");
     fill("#password").with("321");
@@ -77,7 +77,7 @@ public class AppTest extends FluentTest {
   public void personalPlanter_holdsFavoritedPlants() {
     User testUser = new User("Michelle", "321");
     testUser.save();
-    Plant testPlant = new Plant("Arugula", "May", "http://arugula.com", "vitamin K");
+    Plant testPlant = new Plant("Arugula", "May", "http://arugula.com", "vitamin K", "beets", "strawberries");
     testPlant.save();
     goTo("http://localhost:4567/log-in");
     fill("#password").with("321");
