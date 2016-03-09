@@ -10,14 +10,14 @@ SET check_function_bodies = false;
 SET client_min_messages = warning;
 
 --
--- Name: plpgsql; Type: EXTENSION; Schema: -; Owner:
+-- Name: plpgsql; Type: EXTENSION; Schema: -; Owner: 
 --
 
 CREATE EXTENSION IF NOT EXISTS plpgsql WITH SCHEMA pg_catalog;
 
 
 --
--- Name: EXTENSION plpgsql; Type: COMMENT; Schema: -; Owner:
+-- Name: EXTENSION plpgsql; Type: COMMENT; Schema: -; Owner: 
 --
 
 COMMENT ON EXTENSION plpgsql IS 'PL/pgSQL procedural language';
@@ -30,7 +30,7 @@ SET default_tablespace = '';
 SET default_with_oids = false;
 
 --
--- Name: companions; Type: TABLE; Schema: public; Owner: xanadu; Tablespace:
+-- Name: companions; Type: TABLE; Schema: public; Owner: xanadu; Tablespace: 
 --
 
 CREATE TABLE companions (
@@ -67,7 +67,7 @@ ALTER SEQUENCE companions_id_seq OWNED BY companions.id;
 
 
 --
--- Name: nutrientneeds; Type: TABLE; Schema: public; Owner: xanadu; Tablespace:
+-- Name: nutrientneeds; Type: TABLE; Schema: public; Owner: xanadu; Tablespace: 
 --
 
 CREATE TABLE nutrientneeds (
@@ -100,7 +100,7 @@ ALTER SEQUENCE nutrientneeds_id_seq OWNED BY nutrientneeds.id;
 
 
 --
--- Name: plants; Type: TABLE; Schema: public; Owner: xanadu; Tablespace:
+-- Name: plants; Type: TABLE; Schema: public; Owner: xanadu; Tablespace: 
 --
 
 CREATE TABLE plants (
@@ -138,7 +138,7 @@ ALTER SEQUENCE plants_id_seq OWNED BY plants.id;
 
 
 --
--- Name: plants_nutrientneeds; Type: TABLE; Schema: public; Owner: xanadu; Tablespace:
+-- Name: plants_nutrientneeds; Type: TABLE; Schema: public; Owner: xanadu; Tablespace: 
 --
 
 CREATE TABLE plants_nutrientneeds (
@@ -172,7 +172,7 @@ ALTER SEQUENCE plants_nutrientneeds_id_seq OWNED BY plants_nutrientneeds.id;
 
 
 --
--- Name: tools; Type: TABLE; Schema: public; Owner: xanadu; Tablespace:
+-- Name: tools; Type: TABLE; Schema: public; Owner: xanadu; Tablespace: 
 --
 
 CREATE TABLE tools (
@@ -206,7 +206,7 @@ ALTER SEQUENCE tools_id_seq OWNED BY tools.id;
 
 
 --
--- Name: users; Type: TABLE; Schema: public; Owner: xanadu; Tablespace:
+-- Name: users; Type: TABLE; Schema: public; Owner: xanadu; Tablespace: 
 --
 
 CREATE TABLE users (
@@ -240,7 +240,7 @@ ALTER SEQUENCE users_id_seq OWNED BY users.id;
 
 
 --
--- Name: users_plants; Type: TABLE; Schema: public; Owner: xanadu; Tablespace:
+-- Name: users_plants; Type: TABLE; Schema: public; Owner: xanadu; Tablespace: 
 --
 
 CREATE TABLE users_plants (
@@ -274,7 +274,7 @@ ALTER SEQUENCE users_plants_id_seq OWNED BY users_plants.id;
 
 
 --
--- Name: users_tools; Type: TABLE; Schema: public; Owner: xanadu; Tablespace:
+-- Name: users_tools; Type: TABLE; Schema: public; Owner: xanadu; Tablespace: 
 --
 
 CREATE TABLE users_tools (
@@ -368,6 +368,12 @@ ALTER TABLE ONLY users_tools ALTER COLUMN id SET DEFAULT nextval('users_tools_id
 --
 
 COPY companions (id, name, planting_season, health_benefits, other_uses, img_url) FROM stdin;
+1	Comfrey	Spring, Summer, or Fall	Poultices (antiquated)	Great for mulch, Compost activator, Companion plant for trees, General insect (especially bees) nectar and pollen plant, Lacewings prefer to lay eggs on Comfrey, Spiders prefer to overwinter on Comfrey, Parasitoid Wasps and Spiders prefer to spend time and hunt on and around Comfrey	img/comfrey.jpg
+2	Lavender	Early Spring	Lavender oil is believed to have antiseptic and anti-inflammatory properties which can be used to help heal minor burns and bug bites	Repels fleas, ticks, moths, attracts butterflies and other beneficial insects	img/lavender.jpg
+3	Borage	Early Spring (after last frost)	Younger leaves can be consumed, containing essential fatty acids, Vitamin C, Vitamin A, Iron	Attracts bees and other predator insects (best with tomatoes, strawberries, and squash)	img/borage.jpg
+4	Marigold	Early Spring (after last frost)	Anti-bacterial, anti-fungal, anti-infective, anti-inflammatory, anti-oxidant, anti-phlogistic, anti-septic, anti-spasmodic, anti-viral, aperient, astringent, cholagogue, detoxifier	Brassicas, tomatoes, cucumbers. Planted throughout garden they ward from root attacking predators (beware allergy sufferers)	img/marigold.jpg
+5	Marjoram	Early Spring (after last frost)	Digestive Benefits, Iron, Vitamin A, Calcium	Fruit trees, peppers, beans. Good ground cover that help create a humid micro-climate	img/marjoram.jpg
+6	Nasturtium	Early Spring	Delicious flowers are a great peppery accent to salads, seeds are used as alternative to capers	Useful against aphids, white fly. Companion for broccoli, fruit trees, cucumber, garlic, roses, strawberries	img/nasturtium.jpg
 \.
 
 
@@ -383,6 +389,19 @@ SELECT pg_catalog.setval('companions_id_seq', 1, false);
 --
 
 COPY nutrientneeds (id, description) FROM stdin;
+1	full sun (~6hrs direct)
+2	partial sun (3-6hrs)
+3	dappled sun (3-5hrs, under canopy)
+4	full shade (>3hrs)
+5	requires a frequent amount of watering
+6	requires watering at critical stages of development
+7	requires watering during dry spells
+8	does not need frequent watering
+9	loamy soil
+10	sandy soil
+11	silt soil
+12	clay soil
+13	loamy compost
 \.
 
 
@@ -428,6 +447,51 @@ SELECT pg_catalog.setval('plants_id_seq', 1, false);
 --
 
 COPY plants_nutrientneeds (id, plant_id, nutrientproperty_id) FROM stdin;
+1	1	1
+2	1	6
+3	1	13
+4	2	1
+5	2	6
+6	2	9
+7	3	2
+8	3	6
+9	3	9
+10	4	1
+11	4	5
+12	4	12
+13	5	2
+14	5	7
+15	5	9
+16	6	1
+17	6	5
+18	6	12
+19	7	1
+20	7	5
+21	7	13
+22	8	1
+23	8	7
+24	8	10
+25	9	1
+26	9	5
+27	9	10
+28	10	1
+29	10	6
+30	10	9
+31	11	1
+32	11	5
+33	11	9
+34	12	2
+35	12	5
+36	12	13
+37	13	2
+38	13	5
+39	13	10
+40	14	1
+41	14	5
+42	14	9
+43	15	1
+44	15	6
+45	15	9
 \.
 
 
@@ -504,7 +568,7 @@ SELECT pg_catalog.setval('users_tools_id_seq', 1, false);
 
 
 --
--- Name: companions_pkey; Type: CONSTRAINT; Schema: public; Owner: xanadu; Tablespace:
+-- Name: companions_pkey; Type: CONSTRAINT; Schema: public; Owner: xanadu; Tablespace: 
 --
 
 ALTER TABLE ONLY companions
@@ -512,7 +576,7 @@ ALTER TABLE ONLY companions
 
 
 --
--- Name: nutrientneeds_pkey; Type: CONSTRAINT; Schema: public; Owner: xanadu; Tablespace:
+-- Name: nutrientneeds_pkey; Type: CONSTRAINT; Schema: public; Owner: xanadu; Tablespace: 
 --
 
 ALTER TABLE ONLY nutrientneeds
@@ -520,7 +584,7 @@ ALTER TABLE ONLY nutrientneeds
 
 
 --
--- Name: plants_nutrientneeds_pkey; Type: CONSTRAINT; Schema: public; Owner: xanadu; Tablespace:
+-- Name: plants_nutrientneeds_pkey; Type: CONSTRAINT; Schema: public; Owner: xanadu; Tablespace: 
 --
 
 ALTER TABLE ONLY plants_nutrientneeds
@@ -528,7 +592,7 @@ ALTER TABLE ONLY plants_nutrientneeds
 
 
 --
--- Name: plants_pkey; Type: CONSTRAINT; Schema: public; Owner: xanadu; Tablespace:
+-- Name: plants_pkey; Type: CONSTRAINT; Schema: public; Owner: xanadu; Tablespace: 
 --
 
 ALTER TABLE ONLY plants
@@ -536,7 +600,7 @@ ALTER TABLE ONLY plants
 
 
 --
--- Name: tools_pkey; Type: CONSTRAINT; Schema: public; Owner: xanadu; Tablespace:
+-- Name: tools_pkey; Type: CONSTRAINT; Schema: public; Owner: xanadu; Tablespace: 
 --
 
 ALTER TABLE ONLY tools
@@ -544,7 +608,7 @@ ALTER TABLE ONLY tools
 
 
 --
--- Name: users_pkey; Type: CONSTRAINT; Schema: public; Owner: xanadu; Tablespace:
+-- Name: users_pkey; Type: CONSTRAINT; Schema: public; Owner: xanadu; Tablespace: 
 --
 
 ALTER TABLE ONLY users
@@ -552,7 +616,7 @@ ALTER TABLE ONLY users
 
 
 --
--- Name: users_plants_pkey; Type: CONSTRAINT; Schema: public; Owner: xanadu; Tablespace:
+-- Name: users_plants_pkey; Type: CONSTRAINT; Schema: public; Owner: xanadu; Tablespace: 
 --
 
 ALTER TABLE ONLY users_plants
@@ -560,7 +624,7 @@ ALTER TABLE ONLY users_plants
 
 
 --
--- Name: users_tools_pkey; Type: CONSTRAINT; Schema: public; Owner: xanadu; Tablespace:
+-- Name: users_tools_pkey; Type: CONSTRAINT; Schema: public; Owner: xanadu; Tablespace: 
 --
 
 ALTER TABLE ONLY users_tools
@@ -580,3 +644,4 @@ GRANT ALL ON SCHEMA public TO PUBLIC;
 --
 -- PostgreSQL database dump complete
 --
+
