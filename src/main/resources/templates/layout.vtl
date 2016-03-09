@@ -25,11 +25,18 @@
         <li><a href="/">Home</a></li>
         <li><a href="/about">About Permaculture</a></li>
         <li><a href="/gallery">Plant Gallery</a></li>
+        #if ($currentUser)
+          <li><a href="/planter">Personal Planter</a></li>
+        #end
         <li role="separator" class="divider"></li>
         <li><a href="/tips">Garden Tips</a></li>
         <li role="separator" class="divider"></li>
-        <li><a href="/log-in">Login/New Users</a></li>
-        <li><a href="/logout">Logout</a></li>
+        #if ($currentUser)
+          <li>User: $currentUser.getName()</li>
+          <li><a href="/logout">Logout</a></li>
+        #else
+          <li><a href="/log-in">Login/New Users</a></li>
+        #end
       </ul>
 
       <div class="expandedNav">
@@ -37,11 +44,18 @@
           <li><a href="/">Home</a></li>
           <li><a href="/about">About Permaculture</a></li>
           <li><a href="/gallery">Plant Gallery</a></li>
+          #if ($currentUser)
+            <li><a href="/planter">Personal Planter</a></li>
+          #end
           <li role="separator" class="divider"></li>
           <li><a href="/tips">Garden Tips</a></li>
           <li role="separator" class="divider"></li>
-          <li><a href="/log-in">Login/New Users</a></li>
-          <li><a href="/logout">Logout</a></li>
+          #if ($currentUser)
+            <li>User: $currentUser.getName()</li>
+            <li><a href="/logout">Logout</a></li>
+          #else
+            <li><a href="/log-in">Login/New Users</a></li>
+          #end
         </ul>
   </ul>
 </header>
