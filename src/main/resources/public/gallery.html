@@ -7,13 +7,14 @@
   <script src="js/jquery-1.12.0.js"></script>
   <script src="js/scripts.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.4.0/animate.min.css">  <link rel="icon" href="favicon.ico">
+  <link href='https://fonts.googleapis.com/css?family=Amatic+SC' rel='stylesheet' type='text/css'>
   <link rel="icon" href="favicon.ico">
   <title>PDXPermacultureProject</title>
 
   <header>
     <div class="mobileHead">
     <img id ="world" src="img/world.png">
-      <p>PORTLAND<br>PERMACULTURE</br>PROJECT</p>
+      <p class="brokenPPP">PORTLAND<br>PERMACULTURE</br>PROJECT</p>
     </div>
 
     <ul class="nav navbar-nav">
@@ -59,7 +60,7 @@
               <div class="modal-body">
                 <img class="plantImg" src="img/plant.jpg" />
               </div>
-              <div class="modal-footer">
+                <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                 <button type="button" class="btn btn-primary">Add To Planter</button>
               </div>
@@ -67,8 +68,9 @@
           </div>
         </div>
       </div>
+      <button class="deleteButt" type="button"><p><strong>X</strong></p></button>
+      <a href id="modalClickthru" data-toggle="modal" data-target="#myModal"><img class="plantImg" src="img/plant.jpg" /></a>
 
-      <a href id="modalClickthru"  data-toggle="modal" data-target="#myModal"><img      class="plantImg" src="img/plant.jpg" /></a>
       <div class="plantInfo">
         <div class="detailsTitle">
           <span>Plant Name</span><br/>
