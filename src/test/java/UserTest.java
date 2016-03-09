@@ -64,7 +64,7 @@ public class UserTest {
   public void addPlant_attachesPlantToUser() {
     User testUser = new User("Michelle", "p@$$w0rd");
     testUser.save();
-    Plant testPlant = new Plant("Arugula", "May", "http://arugula.com", "vitamin K");
+    Plant testPlant = new Plant("Arugula", "May", "http://arugula.com", "vitamin K", "beets", "strawberries");
     testPlant.save();
     testUser.addPlant(testPlant.getId());
     assertTrue(testUser.getPlants().contains(testPlant));
