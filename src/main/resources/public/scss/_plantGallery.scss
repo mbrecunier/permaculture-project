@@ -1,0 +1,74 @@
+
+.galleryContainer {
+ display: flex;
+ flex-wrap: wrap;
+ flex-direction: row;
+ justify-content: center;
+ padding-top: 100px;
+
+   @media (min-width: 768px) {
+     padding-top: 140px;
+   }
+
+
+  .plantCard {
+    font-family: "Raleway", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    position: relative;
+    height: $card-height;
+    width: $card-width;
+    overflow: hidden;
+    border: 1px solid $card-color;
+    border-radius: 3px;
+    margin: 10px;
+
+      .modal-content {
+        margin-top: 200px;
+      }
+
+      #modalClickthru {
+        outline: none;
+      }
+
+      .plantImg {
+        width: 100%;
+        height: auto;
+
+        &:hover {
+          opacity: 0.6;
+        }
+      }
+
+      .plantInfo {
+        position: absolute;
+        top: $card-height - $title-height;
+        height: $card-height;
+        width: 100%;
+        color: #fff;
+        background-color: $card-color;
+        opacity: 0.9;
+        transition: transform $transition-time;
+
+          &:hover {
+             transform: translateY(-($card-height - $title-height));
+          }
+
+          .detailsTitle {
+            height: $title-height - 20px;
+            font-size: 20px;
+            padding-left:7px;
+            padding-top: 3px;
+
+            small {
+              font-size: 70%;
+              color: #f7f7f7;
+            }
+          }
+
+          .detailsBody {
+            margin: 19px;
+            text-align: center;
+
+          }
+    }
+  }
+}

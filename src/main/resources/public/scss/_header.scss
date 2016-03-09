@@ -1,0 +1,96 @@
+header {
+  position: fixed;
+  display: inline-block;
+  height: 100px;
+  background-color: $card-color;
+  border: 1px solid $rust;
+  padding: 10px;
+  width: 100%;
+  z-index: 99999;
+  @include linear-gradient($bgbeige, $blue);
+  @include linear-gradient(50deg, $bgbeige 0%, $blue 100%);
+
+    // @media (min-width: 1150px) {
+    //   position: relative;
+    //   display: none;
+    // }
+
+  img {
+    height: 50px;
+    float: left;
+    margin-left: 7px;
+    margin-top: 4px;
+  }
+
+  h3 {
+    color: $fontColor;
+    margin-left: 70px;
+    margin-top: 5px;
+    font-size: 30pt;
+    text-shadow: 2px 2px black;
+  }
+
+  #hamburger {
+    position: absolute;
+    right: 20px;
+    top: -58px;
+    font-size: 30px;
+    color: $fontColor;
+    border: 2pt solid $fontColor;
+    border-radius: 5pt;
+    padding: 5px 2px;
+    padding-bottom: 7px;
+
+    @media (min-width: 768px) {
+      display: none;
+    }
+  }
+
+  #logout {
+    display: none;
+  }
+
+  .dropdown {
+    @include linear-gradient($buttonColor, $card-color);
+    @include linear-gradient(50deg, $buttonColor 0%, $card-color 100%);
+    margin-top: 10px;
+
+    @media (min-width: 768px) {
+      display: none;
+    }
+  }
+
+  .expandedNav {
+    display: none;
+
+    @media (min-width: 768px) {
+      display: block;
+
+      ul {
+        position: absolute;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        height: 30px;
+        border: 1pt solid $rust;
+        width: 100vw;
+        top: 19.5px;
+        left: -11px;
+        @include linear-gradient($buttonColor, $card-color);
+        @include linear-gradient(50deg, $buttonColor 0%, $card-color 100%);
+
+        li {
+          list-style-type: none;
+          padding-top: 4px;
+
+          a {
+            color: $fontColor;
+            margin-top: 35px;
+            text-shadow: 1px 1px black;
+
+          }
+        }
+      }
+    }
+  }
+}

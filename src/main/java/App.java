@@ -13,9 +13,9 @@ public class App {
 
     get("/", (request, response) -> {
       HashMap<String, Object> model = new HashMap<String, Object>();
-      model.put("template", "templates/index.vtl");
       User currentUser = request.session().attribute("currentUser");
       model.put("currentUser", currentUser);
+      model.put("template", "templates/index.vtl");
       return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());
 
@@ -54,5 +54,57 @@ public class App {
       response.redirect("/log-in");
       return null;
     });
+
+    get("/gallery", (request, response) -> {
+      HashMap<String, Object> model = new HashMap<String, Object>();
+      User currentUser = request.session().attribute("currentUser");
+      model.put("currentUser", currentUser);
+      List<Plant> plants = Plant.all();
+      model.put("plants", plants);
+      model.put("template", "templates/gallery.vtl");
+      return new ModelAndView(model, layout);
+    }, new VelocityTemplateEngine());
+
+    get("/planter", (request, response) -> {
+      HashMap<String, Object> model = new HashMap<String, Object>();
+      User currentUser = request.session().attribute("currentUser");
+      model.put("currentUser", currentUser);
+      model.put("template", "templates/planter.vtl");
+      return new ModelAndView(model, layout);
+    }, new VelocityTemplateEngine());
+
+    get("/about", (request, response) -> {
+      HashMap<String, Object> model = new HashMap<String, Object>();
+      User currentUser = request.session().attribute("currentUser");
+      model.put("currentUser", currentUser);
+      model.put("template", "templates/about.vtl");
+      return new ModelAndView(model, layout);
+    }, new VelocityTemplateEngine());
+
+    get("/tips", (request, response) -> {
+      HashMap<String, Object> model = new HashMap<String, Object>();
+      User currentUser = request.session().attribute("currentUser");
+      model.put("currentUser", currentUser);
+      model.put("template", "templates/tips.vtl");
+      return new ModelAndView(model, layout);
+    }, new VelocityTemplateEngine());
+
+    post("/logout", (request, response) -> {
+      request.session().attribute("currentUser", null);
+      response.redirect("/");
+      return null;
+    });
+
+    post("/favorite", (request, response) -> {
+      HashMap<String, Object> model = new HashMap<String, Object>();
+      User currentUser = request.session().attribute("currentUser");
+      int plantId = Integer.parseInt(request.queryParams("plantId"));
+        if(currentUser != null) {
+          currentUser.addPlant(plantId);
+        }
+      response.redirect("/gallery");
+      return null;
+    });
+
   }
 }

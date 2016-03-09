@@ -1,0 +1,11 @@
+#if($currentUser)
+  <h4>User is $currentUser.getName()</h4>
+#end
+
+<h2>User Planter</h2>
+
+<ul>
+#foreach ($plant in $currentUser.getPlants())
+  <li>$plant.getName()</li>
+#end
+</ul>

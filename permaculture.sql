@@ -10,14 +10,14 @@ SET check_function_bodies = false;
 SET client_min_messages = warning;
 
 --
--- Name: plpgsql; Type: EXTENSION; Schema: -; Owner: 
+-- Name: plpgsql; Type: EXTENSION; Schema: -; Owner:
 --
 
 CREATE EXTENSION IF NOT EXISTS plpgsql WITH SCHEMA pg_catalog;
 
 
 --
--- Name: EXTENSION plpgsql; Type: COMMENT; Schema: -; Owner: 
+-- Name: EXTENSION plpgsql; Type: COMMENT; Schema: -; Owner:
 --
 
 COMMENT ON EXTENSION plpgsql IS 'PL/pgSQL procedural language';
@@ -30,7 +30,7 @@ SET default_tablespace = '';
 SET default_with_oids = false;
 
 --
--- Name: companions; Type: TABLE; Schema: public; Owner: xanadu; Tablespace: 
+-- Name: companions; Type: TABLE; Schema: public; Owner: xanadu; Tablespace:
 --
 
 CREATE TABLE companions (
@@ -67,7 +67,7 @@ ALTER SEQUENCE companions_id_seq OWNED BY companions.id;
 
 
 --
--- Name: nutrientneeds; Type: TABLE; Schema: public; Owner: xanadu; Tablespace: 
+-- Name: nutrientneeds; Type: TABLE; Schema: public; Owner: xanadu; Tablespace:
 --
 
 CREATE TABLE nutrientneeds (
@@ -100,7 +100,7 @@ ALTER SEQUENCE nutrientneeds_id_seq OWNED BY nutrientneeds.id;
 
 
 --
--- Name: plants; Type: TABLE; Schema: public; Owner: xanadu; Tablespace: 
+-- Name: plants; Type: TABLE; Schema: public; Owner: xanadu; Tablespace:
 --
 
 CREATE TABLE plants (
@@ -138,7 +138,7 @@ ALTER SEQUENCE plants_id_seq OWNED BY plants.id;
 
 
 --
--- Name: plants_nutrientneeds; Type: TABLE; Schema: public; Owner: xanadu; Tablespace: 
+-- Name: plants_nutrientneeds; Type: TABLE; Schema: public; Owner: xanadu; Tablespace:
 --
 
 CREATE TABLE plants_nutrientneeds (
@@ -172,7 +172,7 @@ ALTER SEQUENCE plants_nutrientneeds_id_seq OWNED BY plants_nutrientneeds.id;
 
 
 --
--- Name: tools; Type: TABLE; Schema: public; Owner: xanadu; Tablespace: 
+-- Name: tools; Type: TABLE; Schema: public; Owner: xanadu; Tablespace:
 --
 
 CREATE TABLE tools (
@@ -206,7 +206,7 @@ ALTER SEQUENCE tools_id_seq OWNED BY tools.id;
 
 
 --
--- Name: users; Type: TABLE; Schema: public; Owner: xanadu; Tablespace: 
+-- Name: users; Type: TABLE; Schema: public; Owner: xanadu; Tablespace:
 --
 
 CREATE TABLE users (
@@ -240,7 +240,7 @@ ALTER SEQUENCE users_id_seq OWNED BY users.id;
 
 
 --
--- Name: users_plants; Type: TABLE; Schema: public; Owner: xanadu; Tablespace: 
+-- Name: users_plants; Type: TABLE; Schema: public; Owner: xanadu; Tablespace:
 --
 
 CREATE TABLE users_plants (
@@ -274,7 +274,7 @@ ALTER SEQUENCE users_plants_id_seq OWNED BY users_plants.id;
 
 
 --
--- Name: users_tools; Type: TABLE; Schema: public; Owner: xanadu; Tablespace: 
+-- Name: users_tools; Type: TABLE; Schema: public; Owner: xanadu; Tablespace:
 --
 
 CREATE TABLE users_tools (
@@ -504,7 +504,7 @@ SELECT pg_catalog.setval('users_tools_id_seq', 1, false);
 
 
 --
--- Name: companions_pkey; Type: CONSTRAINT; Schema: public; Owner: xanadu; Tablespace: 
+-- Name: companions_pkey; Type: CONSTRAINT; Schema: public; Owner: xanadu; Tablespace:
 --
 
 ALTER TABLE ONLY companions
@@ -512,7 +512,7 @@ ALTER TABLE ONLY companions
 
 
 --
--- Name: nutrientneeds_pkey; Type: CONSTRAINT; Schema: public; Owner: xanadu; Tablespace: 
+-- Name: nutrientneeds_pkey; Type: CONSTRAINT; Schema: public; Owner: xanadu; Tablespace:
 --
 
 ALTER TABLE ONLY nutrientneeds
@@ -520,7 +520,7 @@ ALTER TABLE ONLY nutrientneeds
 
 
 --
--- Name: plants_nutrientneeds_pkey; Type: CONSTRAINT; Schema: public; Owner: xanadu; Tablespace: 
+-- Name: plants_nutrientneeds_pkey; Type: CONSTRAINT; Schema: public; Owner: xanadu; Tablespace:
 --
 
 ALTER TABLE ONLY plants_nutrientneeds
@@ -528,7 +528,7 @@ ALTER TABLE ONLY plants_nutrientneeds
 
 
 --
--- Name: plants_pkey; Type: CONSTRAINT; Schema: public; Owner: xanadu; Tablespace: 
+-- Name: plants_pkey; Type: CONSTRAINT; Schema: public; Owner: xanadu; Tablespace:
 --
 
 ALTER TABLE ONLY plants
@@ -536,7 +536,7 @@ ALTER TABLE ONLY plants
 
 
 --
--- Name: tools_pkey; Type: CONSTRAINT; Schema: public; Owner: xanadu; Tablespace: 
+-- Name: tools_pkey; Type: CONSTRAINT; Schema: public; Owner: xanadu; Tablespace:
 --
 
 ALTER TABLE ONLY tools
@@ -544,7 +544,7 @@ ALTER TABLE ONLY tools
 
 
 --
--- Name: users_pkey; Type: CONSTRAINT; Schema: public; Owner: xanadu; Tablespace: 
+-- Name: users_pkey; Type: CONSTRAINT; Schema: public; Owner: xanadu; Tablespace:
 --
 
 ALTER TABLE ONLY users
@@ -552,7 +552,7 @@ ALTER TABLE ONLY users
 
 
 --
--- Name: users_plants_pkey; Type: CONSTRAINT; Schema: public; Owner: xanadu; Tablespace: 
+-- Name: users_plants_pkey; Type: CONSTRAINT; Schema: public; Owner: xanadu; Tablespace:
 --
 
 ALTER TABLE ONLY users_plants
@@ -560,7 +560,7 @@ ALTER TABLE ONLY users_plants
 
 
 --
--- Name: users_tools_pkey; Type: CONSTRAINT; Schema: public; Owner: xanadu; Tablespace: 
+-- Name: users_tools_pkey; Type: CONSTRAINT; Schema: public; Owner: xanadu; Tablespace:
 --
 
 ALTER TABLE ONLY users_tools
@@ -580,4 +580,3 @@ GRANT ALL ON SCHEMA public TO PUBLIC;
 --
 -- PostgreSQL database dump complete
 --
-

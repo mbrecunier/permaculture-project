@@ -1,0 +1,153 @@
+@import url("https://fonts.googleapis.com/css?family=Raleway:400,700");
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+
+.body {
+  background-image: url("../img/leaf.png");
+  background-repeat: repeat; }
+
+header {
+  position: fixed;
+  display: inline-block;
+  height: 100px;
+  background-color: #496818;
+  border: 1px solid #681821;
+  padding: 10px;
+  width: 100%;
+  z-index: 99999;
+  background-color: #685F18;
+  background-image: -webkit-linear-gradient(#685F18, #7DB5A5);
+  background-image: linear-gradient(#685F18, #7DB5A5);
+  background-color: #685F18;
+  background-image: -webkit-linear-gradient(-320deg, #685F18 0%, #7DB5A5 100%);
+  background-image: linear-gradient(50deg,#685F18 0%, #7DB5A5 100%); }
+  header img {
+    height: 50px;
+    float: left;
+    margin-left: 7px;
+    margin-top: 4px; }
+  header h3 {
+    color: #AEBC99;
+    margin-left: 70px;
+    margin-top: 5px;
+    font-size: 30pt;
+    text-shadow: 2px 2px black; }
+  header #hamburger {
+    position: absolute;
+    right: 20px;
+    top: -58px;
+    font-size: 30px;
+    color: #AEBC99;
+    border: 2pt solid #AEBC99;
+    border-radius: 5pt;
+    padding: 5px 2px;
+    padding-bottom: 7px; }
+    @media (min-width: 768px) {
+      header #hamburger {
+        display: none; } }
+  header #logout {
+    display: none; }
+  header .dropdown {
+    background-color: #AFA47E;
+    background-image: -webkit-linear-gradient(#AFA47E, #496818);
+    background-image: linear-gradient(#AFA47E, #496818);
+    background-color: #AFA47E;
+    background-image: -webkit-linear-gradient(-320deg, #AFA47E 0%, #496818 100%);
+    background-image: linear-gradient(50deg,#AFA47E 0%, #496818 100%);
+    margin-top: 10px; }
+    @media (min-width: 768px) {
+      header .dropdown {
+        display: none; } }
+  header .expandedNav {
+    display: none; }
+    @media (min-width: 768px) {
+      header .expandedNav {
+        display: block; }
+        header .expandedNav ul {
+          position: absolute;
+          display: flex;
+          flex-direction: row;
+          justify-content: space-around;
+          height: 30px;
+          border: 1pt solid #681821;
+          width: 100vw;
+          top: 19.5px;
+          left: -11px;
+          background-color: #AFA47E;
+          background-image: -webkit-linear-gradient(#AFA47E, #496818);
+          background-image: linear-gradient(#AFA47E, #496818);
+          background-color: #AFA47E;
+          background-image: -webkit-linear-gradient(-320deg, #AFA47E 0%, #496818 100%);
+          background-image: linear-gradient(50deg,#AFA47E 0%, #496818 100%); }
+          header .expandedNav ul li {
+            list-style-type: none;
+            padding-top: 4px; }
+            header .expandedNav ul li a {
+              color: #AEBC99;
+              margin-top: 35px;
+              text-shadow: 1px 1px black; } }
+
+.galleryContainer {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+  padding-top: 100px; }
+  @media (min-width: 768px) {
+    .galleryContainer {
+      padding-top: 140px; } }
+  .galleryContainer .plantCard {
+    font-family: "Raleway", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    position: relative;
+    height: 300px;
+    width: 320px;
+    overflow: hidden;
+    border: 1px solid #496818;
+    border-radius: 3px;
+    margin: 10px; }
+    .galleryContainer .plantCard .modal-content {
+      margin-top: 200px; }
+    .galleryContainer .plantCard #modalClickthru {
+      outline: none; }
+    .galleryContainer .plantCard .plantImg {
+      width: 100%;
+      height: auto; }
+      .galleryContainer .plantCard .plantImg:hover {
+        opacity: 0.6; }
+    .galleryContainer .plantCard .plantInfo {
+      position: absolute;
+      top: 236px;
+      height: 300px;
+      width: 100%;
+      color: #fff;
+      background-color: #496818;
+      opacity: 0.9;
+      transition: transform 0.75s; }
+      .galleryContainer .plantCard .plantInfo:hover {
+        transform: translateY(-236px); }
+      .galleryContainer .plantCard .plantInfo .detailsTitle {
+        height: 44px;
+        font-size: 20px;
+        padding-left: 7px;
+        padding-top: 3px; }
+        .galleryContainer .plantCard .plantInfo .detailsTitle small {
+          font-size: 70%;
+          color: #f7f7f7; }
+      .galleryContainer .plantCard .plantInfo .detailsBody {
+        margin: 19px;
+        text-align: center; }
+
+@media (min-width: 768px) {
+  .hero {
+    display: flex;
+    background: url("../img/hero.jpg") top center no-repeat;
+    height: 100vh;
+    background-size: contain;
+    position: relative;
+    top: 130px; } }
+
+/*# sourceMappingURL=main.css.map */
