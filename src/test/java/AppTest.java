@@ -26,14 +26,7 @@ public class AppTest extends FluentTest {
   @Test
   public void rootTest() {
     goTo("http://localhost:4567/");
-    assertThat(pageSource()).contains("Portland Permaculture Project");
-  }
-
-  @Test
-  public void login_loadsFromHomepage() {
-    goTo("http://localhost:4567/");
-    click("a", withText("Login"));
-    assertThat(pageSource()).contains("Returning User");
+    assertThat(pageSource()).contains("Terra Perma");
   }
 
   @Test
@@ -76,7 +69,7 @@ public class AppTest extends FluentTest {
     goTo("http://localhost:4567/log-in");
     fill("#password").with("321");
     submit("#sign-in");
-    click("a", withText("Gallery"));
+    goTo("http://localhost:4567/gallery");
     assertThat(pageSource()).contains("Arugula");
   }
 
@@ -115,7 +108,7 @@ public class AppTest extends FluentTest {
     fill("#password").with("321");
     submit("#sign-in");
     assertThat(pageSource()).contains("Welcome, Michelle");
-    submit("#logout");
+    goTo("http://localhost:4567/logout");
     assertThat(pageSource()).doesNotContain("Michelle");
   }
 
