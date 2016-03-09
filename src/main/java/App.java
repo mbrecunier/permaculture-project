@@ -65,6 +65,16 @@ public class App {
       return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());
 
+    get("/tool-gallery", (request, response) -> {
+      HashMap<String, Object> model = new HashMap<String, Object>();
+      User currentUser = request.session().attribute("currentUser");
+      model.put("currentUser", currentUser);
+      List<Tool> tools = Tool.all();
+      model.put("tools", tools);
+      model.put("template", "templates/tool-gallery.vtl");
+      return new ModelAndView(model, layout);
+    }, new VelocityTemplateEngine());
+
     get("/planter", (request, response) -> {
       HashMap<String, Object> model = new HashMap<String, Object>();
       User currentUser = request.session().attribute("currentUser");
@@ -103,6 +113,17 @@ public class App {
           currentUser.addPlant(plantId);
         }
       response.redirect("/gallery");
+      return null;
+    });
+
+    post("/favorite-tool", (request, response) -> {
+      HashMap<String, Object> model = new HashMap<String, Object>();
+      User currentUser = request.session().attribute("currentUser");
+      int toolId = Integer.parseInt(request.queryParams("toolId"));
+        if(currentUser != null) {
+          currentUser.addTool(toolId);
+        }
+      response.redirect("/tool-gallery");
       return null;
     });
 
