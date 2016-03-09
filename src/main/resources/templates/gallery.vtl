@@ -1,8 +1,3 @@
-#if($currentUser)
-  <h4>User is $currentUser.getName()</h4>
-#else
-  <h4>You must log in to add plants to your planter</h4>
-#end
 <h2>Plant Gallery</h2>
 <div class="galleryContainer">
 
@@ -28,7 +23,7 @@
       </div>
     </div>
 
-    <a href id="modalClickthru"  data-toggle="modal" data-target="#$plant.getId()"><img      class="plantImg" src="$plant.getImgUrl()" /></a>
+    <a href id="modalClickthru"  data-toggle="modal" data-target="#$plant.getId()"><img class="plantImg" src="$plant.getImgUrl()" /></a>
     <div class="plantInfo">
       <div class="detailsTitle">
         <span>$plant.getName()</span><br/>
