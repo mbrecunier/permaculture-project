@@ -99,7 +99,7 @@ public class App {
       HashMap<String, Object> model = new HashMap<String, Object>();
       User currentUser = request.session().attribute("currentUser");
       int plantId = Integer.parseInt(request.queryParams("plantId"));
-        if(currentUser != null) {
+        if(!currentUser.getPlants().contains(Plant.find(plantId))) {
           currentUser.addPlant(plantId);
         }
       response.redirect("/gallery");
