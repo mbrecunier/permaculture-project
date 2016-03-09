@@ -1,10 +1,21 @@
 
 .hero {
-  display: flex;
+    @media (min-width: 768px) {
+      display: flex;
+      background: url('../img/hero.jpg') top center no-repeat;
+      height: 100vh;
+      background-size: contain;
+      position: relative;
+      top: 130px;
 
-  img {
-    width: 2500px;
-    height: auto;
-    overflow: auto;
+      @media (min-width: 1150px) {
+      }
+
+
+
+
+
+
+
   }
 }
