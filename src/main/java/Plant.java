@@ -7,12 +7,16 @@ public class Plant {
   private String planting_season;
   private String img_url;
   private String health_benefits;
+  private String companions;
+  private String antagonists;
 
-  public Plant (String plant_name, String planting_season, String img_url, String health_benefits) {
+  public Plant (String plant_name, String planting_season, String img_url, String health_benefits, String companions, String antagonists) {
     this.plant_name = plant_name;
     this.planting_season = planting_season;
     this.img_url = img_url;
     this.health_benefits = health_benefits;
+    this.companions = companions;
+    this.antagonists = antagonists;
   }
   public int getId() {
     return id;
@@ -34,6 +38,14 @@ public class Plant {
     return health_benefits;
   }
 
+  public String getCompanions() {
+    return companions;
+  }
+
+  public String getAntagonists() {
+    return antagonists;
+  }
+
   public static List<Plant> all() {
     try (Connection con = DB.sql2o.open()) {
       String sql = "SELECT * FROM plants";
@@ -53,12 +65,14 @@ public class Plant {
 
   public void save() {
     try (Connection con = DB.sql2o.open()) {
-      String sql = "INSERT INTO plants (plant_name, planting_season, img_url, health_benefits) VALUES (:plant_name, :planting_season, :img_url, :health_benefits)";
+      String sql = "INSERT INTO plants (plant_name, planting_season, img_url, health_benefits, companions, antagonists) VALUES (:plant_name, :planting_season, :img_url, :health_benefits, :companions, :antagonists)";
       this.id = (int) con.createQuery(sql, true)
         .addParameter("plant_name", this.plant_name)
         .addParameter("planting_season", this.planting_season)
         .addParameter("img_url", this.img_url)
         .addParameter("health_benefits", this.health_benefits)
+        .addParameter("companions", this.companions)
+        .addParameter("antagonists", this.antagonists)
         .executeUpdate()
         .getKey();
     }
