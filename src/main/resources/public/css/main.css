@@ -53,8 +53,8 @@ header {
     @media (min-width: 768px) {
       header #hamburger {
         display: none; } }
-  header #logout {
-    display: none; }
+  /*header #logout {
+    display: none; }*/
   header .dropdown {
     margin-top: 30px; }
   header .dropdown-menu {
