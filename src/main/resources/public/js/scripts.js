@@ -1,3 +1,11 @@
+/* ========================================================================
+ * Tutorial specific Javascript
+ *
+ * ========================================================================
+ * Copyright 2015 Bootbites.com (unless otherwise stated)
+ * For license information see: http://bootbites.com/license
+ * ======================================================================== */
+
 var dropdownSelectors = $('.dropdown, .dropup');
 
 // Custom function to read dropdown data

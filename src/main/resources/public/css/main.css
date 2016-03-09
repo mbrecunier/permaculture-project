@@ -39,28 +39,33 @@ header {
   header #hamburger {
     position: absolute;
     right: 20px;
-    top: -58px;
+    top: -70px;
     font-size: 30px;
-    color: #AEBC99;
-    border: 2pt solid #AEBC99;
+    color: #681821;
+    border: 2pt solid #681821;
     border-radius: 5pt;
     padding: 5px 2px;
     padding-bottom: 7px; }
+    header #hamburger:hover {
+      background-color: #AEBC99; }
+    header #hamburger:focus {
+      background-color: #AEBC99; }
     @media (min-width: 768px) {
       header #hamburger {
         display: none; } }
   header #logout {
     display: none; }
   header .dropdown {
+    margin-top: 30px; }
+  header .dropdown-menu {
     background-color: #AFA47E;
     background-image: -webkit-linear-gradient(#AFA47E, #496818);
     background-image: linear-gradient(#AFA47E, #496818);
     background-color: #AFA47E;
     background-image: -webkit-linear-gradient(-320deg, #AFA47E 0%, #496818 100%);
-    background-image: linear-gradient(50deg,#AFA47E 0%, #496818 100%);
-    margin-top: 10px; }
+    background-image: linear-gradient(50deg,#AFA47E 0%, #496818 100%); }
     @media (min-width: 768px) {
-      header .dropdown {
+      header .dropdown-menu {
         display: none; } }
   header .expandedNav {
     display: none; }
@@ -90,6 +95,17 @@ header {
               color: #AEBC99;
               margin-top: 35px;
               text-shadow: 1px 1px black; } }
+
+.dropdown > a {
+  transition: all 0.2s ease-in; }
+
+.dropdown-menu.animated {
+  animation-duration: 0.55s;
+  animation-timing-function: ease; }
+
+.dropdown-menu.animated.fadeIn {
+  animation-duration: 0.45s;
+  animation-timing-function: ease-out; }
 
 .galleryContainer {
   display: flex;
