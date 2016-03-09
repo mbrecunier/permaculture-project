@@ -3,14 +3,17 @@ header {
   display: inline-block;
   height: 100px;
   background-color: $card-color;
-  border: 1px solid black;
+  border: 1px solid $rust;
   padding: 10px;
   width: 100%;
   z-index: 99999;
-    // background-image: url("../img/leaf.png");
-  @include linear-gradient($buttonColor, $card-color);
-  @include linear-gradient(50deg, $buttonColor 0%, $card-color 100%);
+  @include linear-gradient($bgbeige, $blue);
+  @include linear-gradient(50deg, $bgbeige 0%, $blue 100%);
 
+    // @media (min-width: 1150px) {
+    //   position: relative;
+    //   display: none;
+    // }
 
   img {
     height: 50px;
@@ -24,6 +27,7 @@ header {
     margin-left: 70px;
     margin-top: 5px;
     font-size: 30pt;
+    text-shadow: 2px 2px black;
   }
 
   #hamburger {
@@ -68,7 +72,7 @@ header {
         flex-direction: row;
         justify-content: space-around;
         height: 30px;
-        border: 1pt solid black;
+        border: 1pt solid $rust;
         width: 100vw;
         top: 19.5px;
         left: -11px;
@@ -82,6 +86,8 @@ header {
           a {
             color: $fontColor;
             margin-top: 35px;
+            text-shadow: 1px 1px black;
+
           }
         }
       }
