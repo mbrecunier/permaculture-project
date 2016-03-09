@@ -89,4 +89,23 @@ public class User {
     }
   }
 
+  public void addTool(int toolId) {
+    try(Connection con = DB.sql2o.open()) {
+      String sql = "INSERT INTO users_tools (user_id, tool_id) VALUES (:user_id, :tool_id)";
+      con.createQuery(sql)
+        .addParameter("user_id", this.id)
+        .addParameter("tool_id", toolId)
+        .executeUpdate();
+    }
+  }
+
+  public List<Tool> getTools() {
+    try(Connection con = DB.sql2o.open()) {
+      String sql = "SELECT tools.* FROM users JOIN users_tools ON users.id = users_tools.user_id JOIN tools ON users_tools.tool_id = tools.id WHERE user_id = :id";
+      return con.createQuery(sql)
+        .addParameter("id", id)
+        .executeAndFetch(Tool.class);
+    }
+  }
+
 }
