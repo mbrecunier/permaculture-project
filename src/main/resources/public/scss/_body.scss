@@ -3,10 +3,11 @@
     @media (min-width: 768px) {
       display: flex;
       background: url('../img/hero.jpg') top center no-repeat;
-      height: 100vh;
+      height: 1000px;
       background-size: contain;
       position: relative;
       top: 130px;
+      border: 10px solid red;
 
       @media (min-width: 1150px) {
       }
