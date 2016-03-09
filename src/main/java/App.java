@@ -89,7 +89,7 @@ public class App {
       return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());
 
-    post("/logout", (request, response) -> {
+    get("/logout", (request, response) -> {
       request.session().attribute("currentUser", null);
       response.redirect("/");
       return null;
