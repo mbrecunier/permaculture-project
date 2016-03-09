@@ -70,4 +70,14 @@ public class UserTest {
     assertTrue(testUser.getPlants().contains(testPlant));
   }
 
+  @Test
+  public void addTool_attachesToolToUser() {
+    User testUser = new User("Michelle", "p@$$w0rd");
+    testUser.save();
+    Tool testTool = new Tool("Hammer","http://hammer.com");
+    testTool.save();
+    testUser.addTool(testTool.getId());
+    assertTrue(testUser.getTools().contains(testTool));
+  }
+
 }

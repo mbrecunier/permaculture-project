@@ -3,14 +3,17 @@ header {
   display: inline-block;
   height: 100px;
   background-color: $card-color;
-  border: 1px solid black;
+  border: 1px solid $rust;
   padding: 10px;
   width: 100%;
   z-index: 99999;
-    // background-image: url("../img/leaf.png");
-  @include linear-gradient($buttonColor, $card-color);
-  @include linear-gradient(50deg, $buttonColor 0%, $card-color 100%);
+  @include linear-gradient($bgbeige, $blue);
+  @include linear-gradient(50deg, $bgbeige 0%, $blue 100%);
 
+    // @media (min-width: 1150px) {
+    //   position: relative;
+    //   display: none;
+    // }
 
   img {
     height: 50px;
@@ -24,18 +27,27 @@ header {
     margin-left: 70px;
     margin-top: 5px;
     font-size: 30pt;
+    text-shadow: 2px 2px black;
   }
 
   #hamburger {
     position: absolute;
     right: 20px;
-    top: -58px;
+    top: -70px;
     font-size: 30px;
-    color: $fontColor;
-    border: 2pt solid $fontColor;
+    color: $rust;
+    border: 2pt solid $rust;
     border-radius: 5pt;
     padding: 5px 2px;
     padding-bottom: 7px;
+
+    &:hover {
+      background-color: $fontColor;
+    }
+
+    &:focus {
+      background-color: $fontColor;
+    }
 
     @media (min-width: 768px) {
       display: none;
@@ -47,9 +59,13 @@ header {
   // }
 
   .dropdown {
+    margin-top: 30px;
+  }
+
+  .dropdown-menu {
     @include linear-gradient($buttonColor, $card-color);
     @include linear-gradient(50deg, $buttonColor 0%, $card-color 100%);
-    margin-top: 10px;
+
 
     @media (min-width: 768px) {
       display: none;
@@ -68,7 +84,7 @@ header {
         flex-direction: row;
         justify-content: space-around;
         height: 30px;
-        border: 1pt solid black;
+        border: 1pt solid $rust;
         width: 100vw;
         top: 19.5px;
         left: -11px;
@@ -79,12 +95,33 @@ header {
           list-style-type: none;
           padding-top: 4px;
 
+
           a {
             color: $fontColor;
             margin-top: 35px;
+            text-shadow: 1px 1px black;
+
           }
         }
       }
     }
   }
 }
+
+  .dropdown > a {
+    transition: all 0.2s ease-in;
+  }
+
+  .dropdown.open {
+
+  }
+
+  .dropdown-menu.animated {
+    animation-duration: 0.55s;
+    animation-timing-function: ease;
+  }
+
+  .dropdown-menu.animated.fadeIn {
+    animation-duration: 0.45s;
+    animation-timing-function: ease-out;
+  }

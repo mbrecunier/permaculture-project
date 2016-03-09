@@ -14,52 +14,58 @@ header {
   position: fixed;
   display: inline-block;
   height: 100px;
-  background-color: #7DB5A5;
-  border: 1px solid black;
+  background-color: #496818;
+  border: 1px solid #681821;
   padding: 10px;
   width: 100%;
   z-index: 99999;
-  background-color: #AFA47E;
-  background-image: -webkit-linear-gradient(#AFA47E, #7DB5A5);
-  background-image: linear-gradient(#AFA47E, #7DB5A5);
-  background-color: #AFA47E;
-  background-image: -webkit-linear-gradient(-320deg, #AFA47E 0%, #7DB5A5 100%);
-  background-image: linear-gradient(50deg,#AFA47E 0%, #7DB5A5 100%); }
+  background-color: #685F18;
+  background-image: -webkit-linear-gradient(#685F18, #7DB5A5);
+  background-image: linear-gradient(#685F18, #7DB5A5);
+  background-color: #685F18;
+  background-image: -webkit-linear-gradient(-320deg, #685F18 0%, #7DB5A5 100%);
+  background-image: linear-gradient(50deg,#685F18 0%, #7DB5A5 100%); }
   header img {
     height: 50px;
     float: left;
     margin-left: 7px;
     margin-top: 4px; }
   header h3 {
-    color: white;
+    color: #AEBC99;
     margin-left: 70px;
     margin-top: 5px;
-    font-size: 30pt; }
+    font-size: 30pt;
+    text-shadow: 2px 2px black; }
   header #hamburger {
     position: absolute;
     right: 20px;
-    top: -58px;
+    top: -70px;
     font-size: 30px;
-    color: white;
-    border: 2pt solid white;
+    color: #681821;
+    border: 2pt solid #681821;
     border-radius: 5pt;
     padding: 5px 2px;
     padding-bottom: 7px; }
+    header #hamburger:hover {
+      background-color: #AEBC99; }
+    header #hamburger:focus {
+      background-color: #AEBC99; }
     @media (min-width: 768px) {
       header #hamburger {
         display: none; } }
   /*header #logout {
     display: none; }*/
   header .dropdown {
+    margin-top: 30px; }
+  header .dropdown-menu {
     background-color: #AFA47E;
-    background-image: -webkit-linear-gradient(#AFA47E, #7DB5A5);
-    background-image: linear-gradient(#AFA47E, #7DB5A5);
+    background-image: -webkit-linear-gradient(#AFA47E, #496818);
+    background-image: linear-gradient(#AFA47E, #496818);
     background-color: #AFA47E;
-    background-image: -webkit-linear-gradient(-320deg, #AFA47E 0%, #7DB5A5 100%);
-    background-image: linear-gradient(50deg,#AFA47E 0%, #7DB5A5 100%);
-    margin-top: 10px; }
+    background-image: -webkit-linear-gradient(-320deg, #AFA47E 0%, #496818 100%);
+    background-image: linear-gradient(50deg,#AFA47E 0%, #496818 100%); }
     @media (min-width: 768px) {
-      header .dropdown {
+      header .dropdown-menu {
         display: none; } }
   header .expandedNav {
     display: none; }
@@ -72,22 +78,34 @@ header {
           flex-direction: row;
           justify-content: space-around;
           height: 30px;
-          border: 1pt solid black;
+          border: 1pt solid #681821;
           width: 100vw;
           top: 19.5px;
           left: -11px;
           background-color: #AFA47E;
-          background-image: -webkit-linear-gradient(#AFA47E, #7DB5A5);
-          background-image: linear-gradient(#AFA47E, #7DB5A5);
+          background-image: -webkit-linear-gradient(#AFA47E, #496818);
+          background-image: linear-gradient(#AFA47E, #496818);
           background-color: #AFA47E;
-          background-image: -webkit-linear-gradient(-320deg, #AFA47E 0%, #7DB5A5 100%);
-          background-image: linear-gradient(50deg,#AFA47E 0%, #7DB5A5 100%); }
+          background-image: -webkit-linear-gradient(-320deg, #AFA47E 0%, #496818 100%);
+          background-image: linear-gradient(50deg,#AFA47E 0%, #496818 100%); }
           header .expandedNav ul li {
             list-style-type: none;
             padding-top: 4px; }
             header .expandedNav ul li a {
-              color: white;
-              margin-top: 35px; } }
+              color: #AEBC99;
+              margin-top: 35px;
+              text-shadow: 1px 1px black; } }
+
+.dropdown > a {
+  transition: all 0.2s ease-in; }
+
+.dropdown-menu.animated {
+  animation-duration: 0.55s;
+  animation-timing-function: ease; }
+
+.dropdown-menu.animated.fadeIn {
+  animation-duration: 0.45s;
+  animation-timing-function: ease-out; }
 
 .galleryContainer {
   display: flex;
@@ -104,7 +122,7 @@ header {
     height: 300px;
     width: 320px;
     overflow: hidden;
-    border: 1px solid #7DB5A5;
+    border: 1px solid #496818;
     border-radius: 3px;
     margin: 10px; }
     .galleryContainer .plantCard .modal-content {
@@ -122,7 +140,7 @@ header {
       height: 300px;
       width: 100%;
       color: #fff;
-      background-color: #7DB5A5;
+      background-color: #496818;
       opacity: 0.9;
       transition: transform 0.75s; }
       .galleryContainer .plantCard .plantInfo:hover {
@@ -139,11 +157,13 @@ header {
         margin: 19px;
         text-align: center; }
 
-.hero {
-  display: flex; }
-  .hero img {
-    width: 2500px;
-    height: auto;
-    overflow: auto; }
+@media (min-width: 768px) {
+  .hero {
+    display: flex;
+    background: url("../img/hero.jpg") top center no-repeat;
+    height: 100vh;
+    background-size: contain;
+    position: relative;
+    top: 130px; } }
 
 /*# sourceMappingURL=main.css.map */
