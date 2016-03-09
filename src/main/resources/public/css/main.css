@@ -48,8 +48,8 @@ header {
     @media (min-width: 768px) {
       header #hamburger {
         display: none; } }
-  header #logout {
-    display: none; }
+  /*header #logout {
+    display: none; }*/
   header .dropdown {
     background-color: #AFA47E;
     background-image: -webkit-linear-gradient(#AFA47E, #7DB5A5);

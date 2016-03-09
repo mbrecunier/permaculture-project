@@ -42,9 +42,9 @@ header {
     }
   }
 
-  #logout {
-    display: none;
-  }
+  // #logout {
+  //   display: none;
+  // }
 
   .dropdown {
     @include linear-gradient($buttonColor, $card-color);
