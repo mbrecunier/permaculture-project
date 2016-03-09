@@ -1,7 +1,15 @@
-
+html {
+  // max-width: 1400px;
+}
 
 .body {
-
- background-image: url("../img/leaf.png");
- background-repeat: repeat;
+background-color: $fontColor;
+// overflow: hidden;
+height: 100vh;
+border-radius: 5px;
+overflow-x: hidden;
+  @media (min-width: $break1) {
+   background-image: url("../img/leaf.png");
+   background-repeat: repeat;
+  }
 }
