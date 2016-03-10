@@ -4,12 +4,7 @@
  flex-wrap: wrap;
  flex-direction: row;
  justify-content: center;
- padding-top: 100px;
-
-   @media (min-width: $break1) {
-    //  padding-top: 140px;
-   }
-
+ margin-top: 110px;
 
   .plantCard {
     font-family: "Raleway", "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -46,7 +41,6 @@
       .plantImg {
         width: 100%;
         height: 100%;
-
 
         &:hover {
           opacity: 0.6;

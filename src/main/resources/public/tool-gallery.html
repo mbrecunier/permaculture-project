@@ -48,50 +48,52 @@
           </ul>
   </header>
 </head>
-<body class="body">
 
+  <body class="body">
 
-<div class="loginForm">
-  <div class="return">
-    <h3>Returning Users</h3>
-    <form action="/sign-in" method="post">
-      <div class="form-group">
-        <label for="name"><p>User Name:</p></label>
-        <select class="form-control" name="name" required>
-          #foreach($user in $allUsers)
-            <option value="$user.getId()">$user.getName()</option>
-          #end
-        </select>
+#if($currentUser)
+  <h4>User is $currentUser.getName()</h4>
+#else
+  <h4>You must log in to add tools</h4>
+#end
+<h2>Tool Gallery</h2>
+<div class="galleryContainer">
+
+#foreach ($tool in $tools)
+  <div class="plantCard">
+    <div class="plantModal01">
+      <div class="modal fade" id="$tool.getId()" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <h4 class="modal-title" id="myModalLabel">$tool.getName()</h4>
+            </div>
+            <div class="modal-body">
+              <img class="plantImg" src="$tool.getImgUrl()" />
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+              <button type="submit" form="$tool.getName()" class="btn btn-primary">Add To Planter</button>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="form-group">
-        <label for="password"><p>Password:</p></label>
-        <input type="password" id="password" name="password" required>
+    </div>
+
+    <a href id="modalClickthru"  data-toggle="modal" data-target="#$tool.getId()"><img      class="plantImg" src="$tool.getImgUrl()" /></a>
+    <div class="plantInfo">
+      <div class="detailsTitle">
+        <span>$tool.getName()</span><br/>
       </div>
-      <br><button type="submit" id="sign-in">Log In</button>
-    </form>
+      <div class="detailsBody">
+        <form id="$tool.getName()" action="/favorite-tool" method="post"><input type="hidden" name="toolId" value="$tool.getId()"></form>
+      </div>
+    </div>
   </div>
-
-  <div class="new">
-    <h3>New Users</h3>
-    <form action="/new-user" method="post">
-      <div class="form-group">
-        <label for="new-name"><p>User Name:</p></label>
-        <input type="text" id="new-name" name="new-name" required>
-      </div>
-      <div class="form-group">
-        <label for="new-password"><p>Password:</p></label>
-        <input type="password" id="new-password"  name="new-password" required>
-      </div>
-      <br><button type="submit" id="create-new-user">Create New User</button>
-    </form>
-  </div><br>
-
-  <!-- <div class="WTFmichelle">
-    #if ($loginFail)
-    <h4>User Name and Password do not match. Please try again.</h4>
-    #end
-  </div> -->
+#end
 </div>
+
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>

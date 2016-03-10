@@ -51,47 +51,45 @@
 <body class="body">
 
 
-<div class="loginForm">
-  <div class="return">
-    <h3>Returning Users</h3>
-    <form action="/sign-in" method="post">
-      <div class="form-group">
-        <label for="name"><p>User Name:</p></label>
-        <select class="form-control" name="name" required>
-          #foreach($user in $allUsers)
-            <option value="$user.getId()">$user.getName()</option>
-          #end
-        </select>
-      </div>
-      <div class="form-group">
-        <label for="password"><p>Password:</p></label>
-        <input type="password" id="password" name="password" required>
-      </div>
-      <br><button type="submit" id="sign-in">Log In</button>
-    </form>
-  </div>
+  <h2><strong>Garden Tips</strong></h2>
 
-  <div class="new">
-    <h3>New Users</h3>
-    <form action="/new-user" method="post">
-      <div class="form-group">
-        <label for="new-name"><p>User Name:</p></label>
-        <input type="text" id="new-name" name="new-name" required>
-      </div>
-      <div class="form-group">
-        <label for="new-password"><p>Password:</p></label>
-        <input type="password" id="new-password"  name="new-password" required>
-      </div>
-      <br><button type="submit" id="create-new-user">Create New User</button>
-    </form>
-  </div><br>
 
-  <!-- <div class="WTFmichelle">
-    #if ($loginFail)
-    <h4>User Name and Password do not match. Please try again.</h4>
-    #end
-  </div> -->
-</div>
+
+<h2>Common Gardening Problems and Solutions</h2>
+
+<h3>Snails and slugs are eating my plants</h3>
+<ul>
+<li>Make Beer Traps - Place saucers, bowls or buckets (depending on the size of your problem!) of cheap beer in your garden and leave overnight. The snails will be attracted to the smell of the beer and climb into the saucer/bucket, where they will become intoxicated by the alcohol, fall in and drown.</li>
+
+<li>Add more habitat to your garden to attract birds, who will take care of that problem and many others in your garden.</li>
+
+<li>Consider adding ducks to your garden. They will eat the snails and other pests as wells as fertilize your soil.</li>
+</ul>
+
+<h3>I think my soil is infertile</h3>
+<ul>
+<li>You can use plants with deep tap roots such as fenugreek and dandelion to break up the soil.</li>
+
+<li>Composting over the soil can be used to bring life back into it, either utilizing compost heaps, or more easily and quickly, using the technique of sheet composting.</li>
+
+<li>Use of green manures, plants grown then chopped down afterwards, to generate lots of biomass to mulch the soil with, which will rot down to create humus. Broad beans work well in colder climates, and they add nitrogen to the soil, as do all legumes (bean/pea family). Any strong growing annual plants work well, just cut them down before they go to seed if they aren’t vegetables.</li>
+</ul>
+
+<h3>Wind is harming my plants and drying them out</h3>
+<ul>
+<li>Use a windbreak. If you plant a windbreak or plant near a natural windbreak (ie: tall tree, retaining wall, etc.). Windbreaks can also provide protection to animals, and offer separate yields in their own right.</li>
+</ul>
+
+<h3>Dandelions have overrun my lawn</h3>
+<ul>
+<li>They’re all over your lawn, right? You spend time weeding, or you spend time and money putting weed killer on them. However, dandelions are a great permaculture solution. Forget about what they look like. They are food for your bees and medicine for you. Make tea. Feed the bees, babe. Suddenly, you might find yourself consciously cultivating more of this problem!</li>
+</ul>
+
+<h3>My plants aren’t getting enough light</h3>
+<ul>
+	<li>Place your plants on the sunny side of hills, next to a sun facing wall or near trees with light-colored leaves.</li>
+</ul>
+
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>

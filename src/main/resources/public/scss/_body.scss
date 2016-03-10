@@ -1,23 +1,27 @@
 
 .hero {
-    @media (min-width: 768px) {
-      display: flex;
-      background: url('../img/hero.jpg') top center no-repeat;
-      height: 100vh;
-      background-size: contain;
-      position: relative;
-      top: -5px;
-      border: 1px solid black;
-      z-index: 100;
-
-      @media (min-width: 1150px) {
-      }
-
-
-
-
-
-
-
+  @media (min-width: $break1) {
+    display: flex;
+    background: url('../img/hero.jpg') top center no-repeat;
+    height: 824px;
+    width: 100%;
+    background-size: contain;
+    position: relative;
+    top: -60px;
   }
+}
+
+.about {
+  font-family: $font;
+  font-size: 25px;
+  // & > * {color: $rust;}
+
+
+
+
+
+
+    img {
+      width: 100%;
+    }
 }

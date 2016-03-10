@@ -2,19 +2,20 @@ header {
   display: none;
 
   @media (min-width: $break1) {
-    display: none;
-    height: 100px;
+    height: 130px;
     background-color: $card-color;
     border: 1px solid $rust;
-    padding: 10px;
     width: 100%;
     z-index: 99999;
     @include linear-gradient($bgbeige, $blue);
     @include linear-gradient(50deg, $bgbeige 0%, $blue 100%);
   }
 
+  .nav {
+    width: 100%;
+  }
 
-  img {
+  #world {
     display: block;
     margin-left: auto;
     padding-left: 20px;
@@ -23,21 +24,20 @@ header {
     margin-top: 100px;
 
     @media (min-width: $break1) {
-      height: 60px;
-      margin-left: -6px;
-      margin-top: 9px;
+        width: 0;
     }
   }
 
+  // div.mobileHead {
+  //   height: 130px;
+  // }
+
   .mobileHead {
-    display: flex;
     flex-direction: column;
-    top: 200px;
 
     .brokenPPP {
-      font-family: $font;
       z-index: 100;
-      flex: 1;
+      font-family: $font;
       margin-top: -265px;
       text-align: center;
       color: $fontColor;
@@ -45,20 +45,37 @@ header {
       text-shadow: 2px 2px $rust;
 
         @media (min-width: $break1) {
-          font-size: 19pt;
-          text-align:left;
-          margin-top: -76px;
-          margin-left: 90px;
-          line-height: 30px;
+          display: none;
+        }
+      }
+
+      #logo {
+        height: 73px;
+        margin: 6px 15px;
+        margin-bottom: 7px;
+      }
+
+      .straightPPP {
+        display: none;
+
+        @media (min-width: $break1) {
+          display: block;
+          position: relative;
+          text-align: center;
+          top: -100px;
+          font-family: $font;
+          color: $fontColor;
+          font-size: 60pt;
+          text-shadow: 2px 2px $rust;
+          height: 100px;
         }
       }
   }
 
   #hamburger {
-    z-index: 1010;
     position:relative;
     margin-left: 30px;
-    margin-top: -415px;
+    margin-top: -410px;
     width: 36px;
     font-size: 30px;
     color: $rust;
@@ -84,37 +101,49 @@ header {
   //   display: none;
   // }
 
-  .dropdown {
+  li.dropdown {
     z-index: 1000;
+    font-family: $font;
+    font-size: 25px;
+
+    @media (min-width: $break1) {
+      display: none;
+    }
   }
 
   .dropdown-menu {
     @include linear-gradient($buttonColor, $card-color);
     @include linear-gradient(50deg, $buttonColor 0%, $card-color 100%);
-    border-radius: 15pt;
+    height: 99vh;
+    width: 100vw;
+    position: relative;
+    font-size: 35px;
 
-    @media (min-width: 768px) {
+    @media (min-width: $break1) {
       display: none;
+    }
+
+    a {
+      margin: 20px;
     }
   }
 
   .expandedNav {
     display: none;
 
-    @media (min-width: 768px) {
+    @media (min-width: $break1) {
       display:flex;
-      margin-top: 0px;
+      margin: -1px;
+      margin-top: -100px;
 
       ul {
-        position: relative;
         display: flex;
         flex-direction: row;
         justify-content: space-around;
         height: 40px;
         border: 1pt solid $rust;
-        width: 100vw;
-        top: -5px;
-        left: -11px;
+        width: 100%;
+        margin: 0;
         padding: 0;
         @include linear-gradient($buttonColor, $fontColor);
         @include linear-gradient(50deg, $buttonColor 0%, $fontColor 100%);
@@ -122,7 +151,7 @@ header {
         li {
           list-style-type: none;
           padding-top: 4px;
-
+          align-items: center;
 
           a {
             font-weight:bolder;
@@ -130,8 +159,12 @@ header {
             color: $rust;
             font-size: 20px;
             margin-top: 35px;
-            // text-shadow: 1px 1px black;
+            flex: 1;
 
+            #logout {
+            list-style-type: none;
+            font-style: none
+          }
           }
         }
       }

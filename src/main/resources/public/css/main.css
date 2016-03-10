@@ -9,17 +9,19 @@
   background-color: #eee0c8;
   height: 100vh;
   border-radius: 5px;
-  overflow-x: hidden; }
+  overflow-x: hidden;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1300px; }
 
 header {
   display: none; }
-  @media (min-width: 768px) {
+  @media (min-width: 810px) {
     header {
-      display: none;
-      height: 100px;
+      height: 130px;
       background-color: #496818;
       border: 1px solid #681821;
-      padding: 10px;
       width: 100%;
       z-index: 99999;
       background-color: #685F18;
@@ -28,43 +30,52 @@ header {
       background-color: #685F18;
       background-image: -webkit-linear-gradient(-320deg, #685F18 0%, #7DB5A5 100%);
       background-image: linear-gradient(50deg,#685F18 0%, #7DB5A5 100%); } }
-  header img {
+  header .nav {
+    width: 100%; }
+  header #world {
     display: block;
     margin-left: auto;
     padding-left: 20px;
     margin-right: auto;
     z-index: 10;
     margin-top: 100px; }
-    @media (min-width: 768px) {
-      header img {
-        height: 60px;
-        margin-left: -6px;
-        margin-top: 9px; } }
+    @media (min-width: 810px) {
+      header #world {
+        width: 0; } }
   header .mobileHead {
-    display: flex;
-    flex-direction: column;
-    top: 200px; }
+    flex-direction: column; }
     header .mobileHead .brokenPPP {
-      font-family: "Amatic SC", cursive;
       z-index: 100;
-      flex: 1;
+      font-family: "Amatic SC", cursive;
       margin-top: -265px;
       text-align: center;
       color: #AEBC99;
       font-size: 40pt;
       text-shadow: 2px 2px #681821; }
-      @media (min-width: 768px) {
+      @media (min-width: 810px) {
         header .mobileHead .brokenPPP {
-          font-size: 19pt;
-          text-align: left;
-          margin-top: -76px;
-          margin-left: 90px;
-          line-height: 30px; } }
+          display: none; } }
+    header .mobileHead #logo {
+      height: 73px;
+      margin: 6px 15px;
+      margin-bottom: 7px; }
+    header .mobileHead .straightPPP {
+      display: none; }
+      @media (min-width: 810px) {
+        header .mobileHead .straightPPP {
+          display: block;
+          position: relative;
+          text-align: center;
+          top: -100px;
+          font-family: "Amatic SC", cursive;
+          color: #AEBC99;
+          font-size: 60pt;
+          text-shadow: 2px 2px #681821;
+          height: 100px; } }
   header #hamburger {
-    z-index: 1010;
     position: relative;
     margin-left: 30px;
-    margin-top: -415px;
+    margin-top: -410px;
     width: 36px;
     font-size: 30px;
     color: #681821;
@@ -76,13 +87,16 @@ header {
       background-color: #AEBC99; }
     header #hamburger:focus {
       background-color: #AEBC99; }
-    @media (min-width: 768px) {
+    @media (min-width: 810px) {
       header #hamburger {
         display: none; } }
-  /*header #logout {
-    display: none; }*/
-  header .dropdown {
-    z-index: 1000; }
+  header li.dropdown {
+    z-index: 1000;
+    font-family: "Amatic SC", cursive;
+    font-size: 25px; }
+    @media (min-width: 810px) {
+      header li.dropdown {
+        display: none; } }
   header .dropdown-menu {
     background-color: #AFA47E;
     background-image: -webkit-linear-gradient(#AFA47E, #496818);
@@ -90,26 +104,30 @@ header {
     background-color: #AFA47E;
     background-image: -webkit-linear-gradient(-320deg, #AFA47E 0%, #496818 100%);
     background-image: linear-gradient(50deg,#AFA47E 0%, #496818 100%);
-    border-radius: 15pt; }
-    @media (min-width: 768px) {
+    height: 99vh;
+    width: 100vw;
+    position: relative;
+    font-size: 35px; }
+    @media (min-width: 810px) {
       header .dropdown-menu {
         display: none; } }
+    header .dropdown-menu a {
+      margin: 20px; }
   header .expandedNav {
     display: none; }
-    @media (min-width: 768px) {
+    @media (min-width: 810px) {
       header .expandedNav {
         display: flex;
-        margin-top: 0px; }
+        margin: -1px;
+        margin-top: -100px; }
         header .expandedNav ul {
-          position: relative;
           display: flex;
           flex-direction: row;
           justify-content: space-around;
           height: 40px;
           border: 1pt solid #681821;
-          width: 100vw;
-          top: -5px;
-          left: -11px;
+          width: 100%;
+          margin: 0;
           padding: 0;
           background-color: #AFA47E;
           background-image: -webkit-linear-gradient(#AFA47E, #AEBC99);
@@ -119,13 +137,18 @@ header {
           background-image: linear-gradient(50deg,#AFA47E 0%, #AEBC99 100%); }
           header .expandedNav ul li {
             list-style-type: none;
-            padding-top: 4px; }
+            padding-top: 4px;
+            align-items: center; }
             header .expandedNav ul li a {
               font-weight: bolder;
               font-family: "Amatic SC", cursive;
               color: #681821;
               font-size: 20px;
-              margin-top: 35px; } }
+              margin-top: 35px;
+              flex: 1; }
+              header .expandedNav ul li a #logout {
+                list-style-type: none;
+                font-style: none; } }
 
 .dropdown > a {
   transition: all 0.2s ease-in; }
@@ -143,7 +166,7 @@ header {
   flex-wrap: wrap;
   flex-direction: row;
   justify-content: center;
-  padding-top: 100px; }
+  margin-top: 110px; }
   .galleryContainer .plantCard {
     font-family: "Raleway", "Helvetica Neue", Helvetica, Arial, sans-serif;
     position: relative;
@@ -195,30 +218,96 @@ header {
         margin: 19px;
         text-align: center; }
 
-@media (min-width: 768px) {
+@media (min-width: 810px) {
   .hero {
     display: flex;
     background: url("../img/hero.jpg") top center no-repeat;
-    height: 100vh;
+    height: 824px;
+    width: 100%;
     background-size: contain;
     position: relative;
-    top: -5px;
-    border: 1px solid black;
-    z-index: 100; } }
+    top: -60px; } }
 
-.return, .new, .WTFmichelle {
-  background-color: #685F18;
-  color: #AEBC99;
+.about {
   font-family: "Amatic SC", cursive;
-  font-weight: bolder;
-  font-size: 25px;
-  margin-top: 150px;
-  margin-left: 25px;
-  margin-right: 25px;
-  border-radius: 5px;
-  padding: 15px; }
+  font-size: 25px; }
+  .about img {
+    width: 100%; }
 
-.new, .WTFmichelle {
-  margin-top: 20px; }
+.loginForm {
+  margin-top: 110px;
+  max-width: 750px;
+  min-width: 390px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto; }
+  .loginForm > div {
+    border: 1pt solid #681821; }
+  .loginForm .return, .loginForm .new {
+    background-color: #AFA47E;
+    color: #681821;
+    font-family: "Amatic SC", cursive;
+    font-weight: bolder;
+    font-size: 30px;
+    margin-top: 75px;
+    margin-left: 25px;
+    margin-right: 25px;
+    border-radius: 5px;
+    padding: 25px; }
+  .loginForm .new {
+    margin-top: 20px; }
+  .loginForm .form-group {
+    vertical-align: baseline;
+    margin-top: 50px;
+    padding-bottom: 10px; }
+  .loginForm h3 {
+    font-size: 40px;
+    text-align: center;
+    margin-top: -5px; }
+  .loginForm button {
+    float: right;
+    margin-top: -55px;
+    background: transparent;
+    border: 1pt solid #681821;
+    border-radius: 5px;
+    clear: both; }
+    .loginForm button:hover {
+      background-color: #AEBC99; }
+    .loginForm button:focus {
+      background-color: #AEBC99; }
+  .loginForm label {
+    width: 110px; }
+  .loginForm select[class="form-control"] {
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid #681821;
+    width: 60%;
+    outline: none;
+    padding: 0px 0px 0px 0px;
+    display: inline; }
+  .loginForm #password {
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid #681821;
+    width: 60%;
+    outline: none;
+    padding: 0px 0px 0px 0px;
+    display: inline; }
+  .loginForm input[id="new-name"] {
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid #681821;
+    width: 60%;
+    outline: none;
+    padding: 0px 0px 0px 0px;
+    display: inline; }
+  .loginForm #new-password {
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid #681821;
+    width: 60%;
+    outline: none;
+    padding: 0px 0px 0px 0px;
+    display: inline; }
 
 /*# sourceMappingURL=main.css.map */

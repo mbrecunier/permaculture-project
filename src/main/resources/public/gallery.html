@@ -7,41 +7,46 @@
   <script src="js/jquery-1.12.0.js"></script>
   <script src="js/scripts.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.4.0/animate.min.css">  <link rel="icon" href="favicon.ico">
-  <link href='https://fonts.googleapis.com/css?family=Amatic+SC' rel='stylesheet' type='text/css'>
   <link rel="icon" href="favicon.ico">
+  <link href='https://fonts.googleapis.com/css?family=Amatic+SC' rel='stylesheet' type='text/css'>
   <title>PDXPermacultureProject</title>
 
   <header>
     <div class="mobileHead">
-    <img id ="world" src="img/world.png">
+    <img id="world" src="img/world.png">
       <p class="brokenPPP">PORTLAND<br>PERMACULTURE</br>PROJECT</p>
+      <p class="straightPPP"><img id="logo" src="img/world.png">PORTLAND PERMACULTURE PROJECT</p>
     </div>
 
-    <ul class="nav navbar-nav">
+    <ul class="nav navbar-nav" style="" width: 100%;>
       <li class="dropdown">
         <a href="#" id="hamburger" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">☰</a>
         <ul class="dropdown-menu" data-dropdown-in="fadeInDown" data-dropdown-out="fadeOutUp">
-          <li role="separator" class="divider"></li>
+          <!-- <li role="separator" class="divider"></li> -->
           <li><a href="index.html">Home</a></li>
-          <li><a href="#">About Permaculture</a></li>
           <li><a href="gallery.html">Plant Gallery</a></li>
-          <li role="separator" class="divider"></li>
-          <li><a href="#">Tips & Tricks</a></li>
-          <li role="separator" class="divider"></li>
+          <li><a href="tips.html">Garden Tips</a></li>
+          <li><a href="tool-gallery.html">Tool Library</a></li>
+          <li><a href="planter.html">Your Planter</a></li>
           <li><a href="log-in.html">Login/New Users</a></li>
-        </ul>
+          <li><form action="/logout" method="post">
+              <a href id="logout">Logout</a>
+            </form></li>
+        </ul></li>
 
         <div class="expandedNav">
-          <ul class="">
+          <ul>
             <li><a href="index.html">Home</a></li>
-            <li><a href="#">About Permaculture</a></li>
             <li><a href="gallery.html">Plant Gallery</a></li>
-            <li role="separator" class="divider"></li>
-            <li><a href="#">Tips & Tricks</a></li>
-            <li role="separator" class="divider"></li>
-            <!-- <li><a href="log-in.html">Login/New Users</a></li> -->
+            <li><a href="tips.html">Garden Tips</a></li>
+            <li><a href="tool-gallery.html">Tool Library</a></li>
+            <li><a href="planter.html">Your Planter</a></li>
+            <li><a href="log-in.html">Login/New Users</a></li>
+            <li><form action="/logout" method="post">
+                <a href id="logout">Logout</a>
+              </form></li>
           </ul>
-            </header>
+  </header>
 </head>
 
 <body class="body">

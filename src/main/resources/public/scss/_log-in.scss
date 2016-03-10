@@ -1,22 +1,86 @@
 
-.return {
-  background-color: $bgbeige;
-  color: $fontColor;
-  font-family: $font;
-  font-weight:bolder;
-  font-size: 25px;
-  margin-top: 150px;
-  margin-left: 25px;
-  margin-right: 25px;
-  border-radius: 5px;
-  padding: 15px;
-}
+.loginForm {
+  margin-top: 110px;
+  max-width: 750px;
+  min-width: 390px;;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 
-.new {
-  @extend .return;
-  margin-top: 20px
-}
+     > div {
+      border: 1pt solid $rust;
+     }
 
-.WTFmichelle {
-  @extend .new;
+
+  .return {
+    background-color: $buttonColor;
+    color: $rust;
+    font-family: $font;
+    font-weight:bolder;
+    font-size: 30px;
+    margin-top: 75px;
+    margin-left: 25px;
+    margin-right: 25px;
+    border-radius: 5px;
+    padding: 25px;
+  }
+
+  .new {
+    @extend .return;
+    margin-top: 20px
+  }
+
+  .form-group {
+    vertical-align: baseline;
+    margin-top: 50px;
+    padding-bottom: 10px;
+  }
+
+  h3 {
+    font-size: 40px;
+    text-align: center;
+    margin-top: -5px;
+  }
+
+  button {
+    float: right;
+    margin-top: -55px;
+    background: transparent;
+    border: 1pt solid $rust;
+    border-radius: 5px;
+    clear: both;
+
+      &:hover {
+        background-color: $fontColor;
+      }
+
+      &:focus {
+        background-color: $fontColor;
+        // outline: green;
+      }
+
+    }
+
+
+  label {
+    width: 110px;
+  }
+
+  select[class="form-control"] {
+    // border: 1px dotted #999;
+    // border-radius: 0;
+    @include formStyle;
+  }
+
+  #password {
+    @include formStyle;
+  }
+
+  input[id="new-name"] {
+    @include formStyle;
+  }
+
+  #new-password {
+    @include formStyle;
+  }
 }
