@@ -124,10 +124,8 @@ public class App {
       int toolId = Integer.parseInt(request.queryParams("toolId"));
       Tool newTool = Tool.find(toolId);
         if(currentUser != null) {
-          if(!currentUser.getPlants().contains(Tool.find(toolId))) {
             currentUser.addTool(toolId);
             newTool.subtractQuantity();
-          }
         }
       response.redirect("/tool-gallery");
       return null;
