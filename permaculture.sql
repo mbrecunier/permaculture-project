@@ -508,6 +508,15 @@ SELECT pg_catalog.setval('plants_nutrientneeds_id_seq', 1, false);
 --
 
 COPY tools (id, tool_name, img_url, quantity) FROM stdin;
+1	Budding knife	img/budding-knife.jpg	3
+2	Flathead Screwdriver	img/flathead-screwdriver.jpg	7
+3	Hammer	img/hammer.jpg	6
+4	Hand Cultivator	img/hand-cultivator.jpg	6
+5	Hand Edger	img/hand-edger.jpg	6
+6	Phillips Head Screwdriver	img/Phillips-head-screwdriver.jpg	7
+7	Rake	img/rake.jpg	3
+8	Scuffle Hoe	img/scuffle-hoe.jpg	5
+9	Tow Behind Aerator	img/tow-behind-aerator.jpg	2
 \.
 
 
@@ -515,7 +524,7 @@ COPY tools (id, tool_name, img_url, quantity) FROM stdin;
 -- Name: tools_id_seq; Type: SEQUENCE SET; Schema: public; Owner: Guest
 --
 
-SELECT pg_catalog.setval('tools_id_seq', 1, false);
+SELECT pg_catalog.setval('tools_id_seq', 9, true);
 
 
 --
