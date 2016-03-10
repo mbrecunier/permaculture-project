@@ -2,28 +2,25 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
   <link rel="stylesheet" href="css/main.css" media="screen" title="no title" charset="utf-8">
   <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
   <script src="js/jquery-1.12.0.js"></script>
-  <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script> -->
   <script src="js/scripts.js"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.4.0/animate.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.4.0/animate.min.css">  <link rel="icon" href="favicon.ico">
   <link rel="icon" href="favicon.ico">
-  <title>Terra Perma</title>
+  <link href='https://fonts.googleapis.com/css?family=Amatic+SC' rel='stylesheet' type='text/css'>
+  <title>PDXPermacultureProject</title>
 
 </head>
 
   <body class="body">
     <header>
+      <div class="mobileHead">
       <img id ="world" src="img/world.png">
-      <h3>Terra Perma</h3>
+        <p class="brokenPPP">PORTLAND<br>PERMACULTURE</br>PROJECT</p>
+      </div>
 
       <ul class="nav navbar-nav">
-        <!-- <li class="active"><a href="#">Home <span class="sr-only">(current)</span></a></li>
-        <li><a href="#">Link</a></li> -->
         <li class="dropdown">
           <a href="#" id="hamburger" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">&#9776;</a>
           <ul class="dropdown-menu" data-dropdown-in="fadeInDown" data-dropdown-out="fadeOutUp">
@@ -31,7 +28,7 @@
             <li><a href="/">Home</a></li>
             <li><a href="/about">About Permaculture</a></li>
             <li><a href="/gallery">Plant Gallery</a></li>
-            <li><a href="/gallery">Tool Gallery</a></li>
+            <li><a href="/tool-gallery">Tool Gallery</a></li>
             #if ($currentUser)
             <li><a href="/planter">Personal Planter</a></li>
             #end
@@ -51,7 +48,7 @@
               <li><a href="/">Home</a></li>
               <li><a href="/about">About Permaculture</a></li>
               <li><a href="/gallery">Plant Gallery</a></li>
-              <li><a href="/gallery">Tool Gallery</a></li>
+              <li><a href="/tool-gallery">Tool Gallery</a></li>
               #if ($currentUser)
               <li><a href="/planter">Personal Planter</a></li>
               #end
@@ -67,15 +64,13 @@
             </ul>
 
     </header>
-    <div class="galleryContainer">
+    <div class="container">
 
       #parse( $template )
 
     </div>
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-      <!-- Bootstrap core JS via MaxCDN -->
-      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-      <!-- Tutorial JS code -->
-      <script src="js/scripts.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="js/scripts.js"></script>
   </body>
 </html>

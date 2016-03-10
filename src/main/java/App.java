@@ -109,9 +109,11 @@ public class App {
       HashMap<String, Object> model = new HashMap<String, Object>();
       User currentUser = request.session().attribute("currentUser");
       int plantId = Integer.parseInt(request.queryParams("plantId"));
+      if(currentUser != null) {
         if(!currentUser.getPlants().contains(Plant.find(plantId))) {
           currentUser.addPlant(plantId);
         }
+      }
       response.redirect("/gallery");
       return null;
     });
@@ -124,6 +126,15 @@ public class App {
           currentUser.addTool(toolId);
         }
       response.redirect("/tool-gallery");
+      return null;
+    });
+
+    post("/remove-plant", (request, response) -> {
+      HashMap<String, Object> model = new HashMap<String, Object>();
+      User currentUser = request.session().attribute("currentUser");
+      int plantId = Integer.parseInt(request.queryParams("delete-plantId"));
+      currentUser.removePlant(plantId);
+      response.redirect("/planter");
       return null;
     });
 

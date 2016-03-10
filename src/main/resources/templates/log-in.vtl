@@ -1,35 +1,43 @@
-#if ($loginFail)
-  <h4>User Name and Password do not match. Please try again.</h4>
-#end
-
-<h2>Returning User</h2>
-
-<form action="/sign-in" method="post">
-  <div class="form-group">
-    <label for="name">User Name</label>
-    <select class="form-control" name="name" required>
-      #foreach($user in $allUsers)
-        <option value="$user.getId()">$user.getName()</option>
-      #end
-    </select>
+<div class="loginForm">
+  <div class="WTFmichelle">
+    #if ($loginFail)
+    <h4>User Name and Password do not match. Please try again.</h4>
+    #else
+    <h4>Log In or Sign Up</h4>
+    #end
   </div>
-  <div class="form-group">
-    <label for="password">Password</label>
-    <input type="password" id="password" name="password" required>
+  <div class="return">
+    <h2>Returning User</h2>
+    <form action="/sign-in" method="post">
+      <div class="form-group">
+        <label for="name">User Name</label>
+        <select class="form-control" name="name" required>
+          #foreach($user in $allUsers)
+            <option value="$user.getId()">$user.getName()</option>
+          #end
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" required>
+      </div>
+      <button type="submit" id="sign-in">Log In</button>
+    </form>
   </div>
-  <button type="submit" id="sign-in">Log In</button>
-</form>
 
-<h2>New User</h2>
+  <div class="new">
+    <h2>New User</h2>
+    <form action="/new-user" method="post">
+      <div class="form-group">
+        <label for="new-name">User Name</label>
+        <input type="text" id="new-name" name="new-name" required>
+      </div>
+      <div class="form-group">
+        <label for="new-password">Password</label>
+        <input type="password" id="new-password" name="new-password" required>
+      </div>
+      <button type="submit" id="create-new-user">Create New User</button>
+    </form>
+  </div><br>
 
-<form action="/new-user" method="post">
-  <div class="form-group">
-    <label for="new-name">User Name</label>
-    <input type="text" id="new-name" name="new-name" required>
-  </div>
-  <div class="form-group">
-    <label for="new-password">Password</label>
-    <input type="password" id="new-password" name="new-password" required>
-  </div>
-  <button type="submit" id="create-new-user">Create New User</button>
-</form>
+</div>

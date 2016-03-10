@@ -35,7 +35,7 @@ public class AppTest extends FluentTest {
     fill("#new-name").with("michelle202");
     fill("#new-password").with("123");
     submit("#create-new-user");
-    assertThat(pageSource()).contains("Welcome, michelle202");
+    assertThat(pageSource()).contains("michelle202");
   }
 
   @Test
@@ -46,7 +46,7 @@ public class AppTest extends FluentTest {
     click("option", withText("Michelle"));
     fill("#password").with("321");
     submit("#sign-in");
-    assertThat(pageSource()).contains("Welcome, Michelle");
+    assertThat(pageSource()).contains("Michelle");
   }
 
   @Test
@@ -107,7 +107,7 @@ public class AppTest extends FluentTest {
     click("option", withText("Michelle"));
     fill("#password").with("321");
     submit("#sign-in");
-    assertThat(pageSource()).contains("Welcome, Michelle");
+    assertThat(pageSource()).contains("Michelle");
     goTo("http://localhost:4567/logout");
     assertThat(pageSource()).doesNotContain("Michelle");
   }
