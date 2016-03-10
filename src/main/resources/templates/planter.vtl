@@ -11,9 +11,9 @@
           <small>$plant.getPlantingSeason()</small>
         </div>
         <div class="detailsBody">
-          <p>$plant.getHealthBenefits()</p>
-          <p>$plant.getCompanions()</p>
-          <p>$plant.getAntagonists()</p>
+          <p>Health Benefits: $plant.getHealthBenefits()</p>
+          <p>Companions: $plant.getCompanions()</p>
+          <p>Antagonists: $plant.getAntagonists()</p>
           <form id="delete-$plant.getName()" action="/remove-plant" method="post"><input type="hidden" name="delete-plantId" value="$plant.getId()"></form>
         </div>
       </div>
