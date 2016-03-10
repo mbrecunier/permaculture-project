@@ -118,4 +118,13 @@ public class User {
     }
   }
 
+  public void removeTool(int toolId) {
+    try(Connection con = DB.sql2o.open()) {
+      String sql = "DELETE FROM users_tools WHERE user_id = :user_id AND tool_id = :tool_id;";
+      con.createQuery(sql)
+        .addParameter("user_id", this.id)
+        .addParameter("tool_id", toolId)
+        .executeUpdate();
+    }
+  }
 }
