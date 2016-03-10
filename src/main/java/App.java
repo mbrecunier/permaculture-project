@@ -127,5 +127,14 @@ public class App {
       return null;
     });
 
+    post("/remove-plant", (request, response) -> {
+      HashMap<String, Object> model = new HashMap<String, Object>();
+      User currentUser = request.session().attribute("currentUser");
+      int plantId = Integer.parseInt(request.queryParams("delete-plantId"));
+      currentUser.removePlant(plantId);
+      response.redirect("/planter");
+      return null;
+    });
+
   }
 }
