@@ -12,8 +12,8 @@
             </div>
             <div class="modal-body">
               <img class="plantImg" src="$plant.getImgUrl()" />
-              <p>$plant.getCompanions()</p>
-              <p>$plant.getAntagonists()</p>
+              <p>Companions: $plant.getCompanions()</p>
+              <p>Antagonists: $plant.getAntagonists()</p>
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -31,7 +31,7 @@
         <small>$plant.getPlantingSeason()</small>
       </div>
       <div class="detailsBody">
-        <p>$plant.getHealthBenefits()</p>
+        <p>Health Benefits: $plant.getHealthBenefits()</p>
         <button type="submit" form="$plant.getName()" class="btn btn-primary">Add To Planter</button>
         <form id="$plant.getName()" action="/favorite" method="post"><input type="hidden" name="plantId" value="$plant.getId()"></form>
       </div>

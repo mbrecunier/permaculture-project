@@ -122,8 +122,10 @@ public class App {
       HashMap<String, Object> model = new HashMap<String, Object>();
       User currentUser = request.session().attribute("currentUser");
       int toolId = Integer.parseInt(request.queryParams("toolId"));
+      Tool newTool = Tool.find(toolId);
         if(currentUser != null) {
-          currentUser.addTool(toolId);
+            currentUser.addTool(toolId);
+            newTool.subtractQuantity();
         }
       response.redirect("/tool-gallery");
       return null;
@@ -134,6 +136,17 @@ public class App {
       User currentUser = request.session().attribute("currentUser");
       int plantId = Integer.parseInt(request.queryParams("delete-plantId"));
       currentUser.removePlant(plantId);
+      response.redirect("/planter");
+      return null;
+    });
+
+    post("/remove-tool", (request, response) -> {
+      HashMap<String, Object> model = new HashMap<String, Object>();
+      User currentUser = request.session().attribute("currentUser");
+      int toolId = Integer.parseInt(request.queryParams("delete-toolId"));
+      Tool newTool = Tool.find(toolId);
+      newTool.addQuantity();
+      currentUser.removeTool(toolId);
       response.redirect("/planter");
       return null;
     });

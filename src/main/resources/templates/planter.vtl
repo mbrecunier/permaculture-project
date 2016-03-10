@@ -1,13 +1,23 @@
-#foreach ($plant in $currentUser.getPlants())
-  <div class="plantCard">
-    <button class="deleteButt" type="submit" form="delete-$plant.getName()"><p><strong>X</strong></p></button>
+<div class="galleryContainer">
 
-    <a href id="modalClickthru"  data-toggle="modal" data-target="#$plant.getId()"><img class="plantImg" src="$plant.getImgUrl()" /></a>
-    <div class="plantInfo">
-      <div class="detailsTitle">
-        <span>$plant.getName()</span><br/>
-        <small>$plant.getPlantingSeason()</small>
+  #foreach ($plant in $currentUser.getPlants())
+    <div class="plantCard">
+      <button class="deleteButt" type="submit" form="delete-$plant.getName()"><p><strong>X</strong></p></button>
+
+      <img class="plantImg" src="$plant.getImgUrl()" />
+      <div class="plantInfo">
+        <div class="detailsTitle">
+          <span>$plant.getName()</span><br/>
+          <small>$plant.getPlantingSeason()</small>
+        </div>
+        <div class="detailsBody">
+          <p>Health Benefits: $plant.getHealthBenefits()</p>
+          <p>Companions: $plant.getCompanions()</p>
+          <p>Antagonists: $plant.getAntagonists()</p>
+          <form id="delete-$plant.getName()" action="/remove-plant" method="post"><input type="hidden" name="delete-plantId" value="$plant.getId()"></form>
+        </div>
       </div>
+<<<<<<< HEAD
       <div class="detailsBody">
         <p>$plant.getHealthBenefits()</p>
         <p>$plant.getCompanions()</p>
@@ -16,7 +26,24 @@
             $nutrient.getDescription()
             #end
         <form id="delete-$plant.getName()" action="/remove-plant" method="post"><input type="hidden" name="delete-plantId" value="$plant.getId()"></form>
+=======
+    </div>
+  #end
+
+  #foreach ($tool in $currentUser.getTools())
+    <div class="plantCard">
+      <button class="deleteButt" type="submit" form="delete-$tool.getName()"><p><strong>X</strong></p></button>
+
+      <img class="plantImg" src="$tool.getImgUrl()" />
+      <div class="plantInfo">
+        <div class="detailsTitle">
+          <span>$tool.getName()</span><br/>
+        </div>
+        <div class="detailsBody">
+          <form id="delete-$tool.getName()" action="/remove-tool" method="post"><input type="hidden" name="delete-toolId" value="$tool.getId()"></form>
+        </div>
+>>>>>>> e7a1a524ff434c63af37492ff2c16371b8411ff6
       </div>
     </div>
-  </div>
-#end
+  #end
+</div>
