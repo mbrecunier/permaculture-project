@@ -10,14 +10,14 @@ SET check_function_bodies = false;
 SET client_min_messages = warning;
 
 --
--- Name: plpgsql; Type: EXTENSION; Schema: -; Owner:
+-- Name: plpgsql; Type: EXTENSION; Schema: -; Owner: 
 --
 
 CREATE EXTENSION IF NOT EXISTS plpgsql WITH SCHEMA pg_catalog;
 
 
 --
--- Name: EXTENSION plpgsql; Type: COMMENT; Schema: -; Owner:
+-- Name: EXTENSION plpgsql; Type: COMMENT; Schema: -; Owner: 
 --
 
 COMMENT ON EXTENSION plpgsql IS 'PL/pgSQL procedural language';
@@ -30,7 +30,7 @@ SET default_tablespace = '';
 SET default_with_oids = false;
 
 --
--- Name: companions; Type: TABLE; Schema: public; Owner: xanadu; Tablespace:
+-- Name: companions; Type: TABLE; Schema: public; Owner: Guest; Tablespace: 
 --
 
 CREATE TABLE companions (
@@ -43,10 +43,10 @@ CREATE TABLE companions (
 );
 
 
-ALTER TABLE companions OWNER TO xanadu;
+ALTER TABLE companions OWNER TO "Guest";
 
 --
--- Name: companions_id_seq; Type: SEQUENCE; Schema: public; Owner: xanadu
+-- Name: companions_id_seq; Type: SEQUENCE; Schema: public; Owner: Guest
 --
 
 CREATE SEQUENCE companions_id_seq
@@ -57,17 +57,17 @@ CREATE SEQUENCE companions_id_seq
     CACHE 1;
 
 
-ALTER TABLE companions_id_seq OWNER TO xanadu;
+ALTER TABLE companions_id_seq OWNER TO "Guest";
 
 --
--- Name: companions_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: xanadu
+-- Name: companions_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: Guest
 --
 
 ALTER SEQUENCE companions_id_seq OWNED BY companions.id;
 
 
 --
--- Name: nutrientneeds; Type: TABLE; Schema: public; Owner: xanadu; Tablespace:
+-- Name: nutrientneeds; Type: TABLE; Schema: public; Owner: Guest; Tablespace: 
 --
 
 CREATE TABLE nutrientneeds (
@@ -76,10 +76,10 @@ CREATE TABLE nutrientneeds (
 );
 
 
-ALTER TABLE nutrientneeds OWNER TO xanadu;
+ALTER TABLE nutrientneeds OWNER TO "Guest";
 
 --
--- Name: nutrientneeds_id_seq; Type: SEQUENCE; Schema: public; Owner: xanadu
+-- Name: nutrientneeds_id_seq; Type: SEQUENCE; Schema: public; Owner: Guest
 --
 
 CREATE SEQUENCE nutrientneeds_id_seq
@@ -90,17 +90,17 @@ CREATE SEQUENCE nutrientneeds_id_seq
     CACHE 1;
 
 
-ALTER TABLE nutrientneeds_id_seq OWNER TO xanadu;
+ALTER TABLE nutrientneeds_id_seq OWNER TO "Guest";
 
 --
--- Name: nutrientneeds_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: xanadu
+-- Name: nutrientneeds_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: Guest
 --
 
 ALTER SEQUENCE nutrientneeds_id_seq OWNED BY nutrientneeds.id;
 
 
 --
--- Name: plants; Type: TABLE; Schema: public; Owner: xanadu; Tablespace:
+-- Name: plants; Type: TABLE; Schema: public; Owner: Guest; Tablespace: 
 --
 
 CREATE TABLE plants (
@@ -114,10 +114,10 @@ CREATE TABLE plants (
 );
 
 
-ALTER TABLE plants OWNER TO xanadu;
+ALTER TABLE plants OWNER TO "Guest";
 
 --
--- Name: plants_id_seq; Type: SEQUENCE; Schema: public; Owner: xanadu
+-- Name: plants_id_seq; Type: SEQUENCE; Schema: public; Owner: Guest
 --
 
 CREATE SEQUENCE plants_id_seq
@@ -128,17 +128,17 @@ CREATE SEQUENCE plants_id_seq
     CACHE 1;
 
 
-ALTER TABLE plants_id_seq OWNER TO xanadu;
+ALTER TABLE plants_id_seq OWNER TO "Guest";
 
 --
--- Name: plants_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: xanadu
+-- Name: plants_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: Guest
 --
 
 ALTER SEQUENCE plants_id_seq OWNED BY plants.id;
 
 
 --
--- Name: plants_nutrientneeds; Type: TABLE; Schema: public; Owner: xanadu; Tablespace:
+-- Name: plants_nutrientneeds; Type: TABLE; Schema: public; Owner: Guest; Tablespace: 
 --
 
 CREATE TABLE plants_nutrientneeds (
@@ -148,10 +148,10 @@ CREATE TABLE plants_nutrientneeds (
 );
 
 
-ALTER TABLE plants_nutrientneeds OWNER TO xanadu;
+ALTER TABLE plants_nutrientneeds OWNER TO "Guest";
 
 --
--- Name: plants_nutrientneeds_id_seq; Type: SEQUENCE; Schema: public; Owner: xanadu
+-- Name: plants_nutrientneeds_id_seq; Type: SEQUENCE; Schema: public; Owner: Guest
 --
 
 CREATE SEQUENCE plants_nutrientneeds_id_seq
@@ -162,30 +162,31 @@ CREATE SEQUENCE plants_nutrientneeds_id_seq
     CACHE 1;
 
 
-ALTER TABLE plants_nutrientneeds_id_seq OWNER TO xanadu;
+ALTER TABLE plants_nutrientneeds_id_seq OWNER TO "Guest";
 
 --
--- Name: plants_nutrientneeds_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: xanadu
+-- Name: plants_nutrientneeds_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: Guest
 --
 
 ALTER SEQUENCE plants_nutrientneeds_id_seq OWNED BY plants_nutrientneeds.id;
 
 
 --
--- Name: tools; Type: TABLE; Schema: public; Owner: xanadu; Tablespace:
+-- Name: tools; Type: TABLE; Schema: public; Owner: Guest; Tablespace: 
 --
 
 CREATE TABLE tools (
     id integer NOT NULL,
     tool_name character varying,
-    img_url character varying
+    img_url character varying,
+    quantity integer
 );
 
 
-ALTER TABLE tools OWNER TO xanadu;
+ALTER TABLE tools OWNER TO "Guest";
 
 --
--- Name: tools_id_seq; Type: SEQUENCE; Schema: public; Owner: xanadu
+-- Name: tools_id_seq; Type: SEQUENCE; Schema: public; Owner: Guest
 --
 
 CREATE SEQUENCE tools_id_seq
@@ -196,17 +197,17 @@ CREATE SEQUENCE tools_id_seq
     CACHE 1;
 
 
-ALTER TABLE tools_id_seq OWNER TO xanadu;
+ALTER TABLE tools_id_seq OWNER TO "Guest";
 
 --
--- Name: tools_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: xanadu
+-- Name: tools_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: Guest
 --
 
 ALTER SEQUENCE tools_id_seq OWNED BY tools.id;
 
 
 --
--- Name: users; Type: TABLE; Schema: public; Owner: xanadu; Tablespace:
+-- Name: users; Type: TABLE; Schema: public; Owner: Guest; Tablespace: 
 --
 
 CREATE TABLE users (
@@ -216,10 +217,10 @@ CREATE TABLE users (
 );
 
 
-ALTER TABLE users OWNER TO xanadu;
+ALTER TABLE users OWNER TO "Guest";
 
 --
--- Name: users_id_seq; Type: SEQUENCE; Schema: public; Owner: xanadu
+-- Name: users_id_seq; Type: SEQUENCE; Schema: public; Owner: Guest
 --
 
 CREATE SEQUENCE users_id_seq
@@ -230,17 +231,17 @@ CREATE SEQUENCE users_id_seq
     CACHE 1;
 
 
-ALTER TABLE users_id_seq OWNER TO xanadu;
+ALTER TABLE users_id_seq OWNER TO "Guest";
 
 --
--- Name: users_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: xanadu
+-- Name: users_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: Guest
 --
 
 ALTER SEQUENCE users_id_seq OWNED BY users.id;
 
 
 --
--- Name: users_plants; Type: TABLE; Schema: public; Owner: xanadu; Tablespace:
+-- Name: users_plants; Type: TABLE; Schema: public; Owner: Guest; Tablespace: 
 --
 
 CREATE TABLE users_plants (
@@ -250,10 +251,10 @@ CREATE TABLE users_plants (
 );
 
 
-ALTER TABLE users_plants OWNER TO xanadu;
+ALTER TABLE users_plants OWNER TO "Guest";
 
 --
--- Name: users_plants_id_seq; Type: SEQUENCE; Schema: public; Owner: xanadu
+-- Name: users_plants_id_seq; Type: SEQUENCE; Schema: public; Owner: Guest
 --
 
 CREATE SEQUENCE users_plants_id_seq
@@ -264,17 +265,17 @@ CREATE SEQUENCE users_plants_id_seq
     CACHE 1;
 
 
-ALTER TABLE users_plants_id_seq OWNER TO xanadu;
+ALTER TABLE users_plants_id_seq OWNER TO "Guest";
 
 --
--- Name: users_plants_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: xanadu
+-- Name: users_plants_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: Guest
 --
 
 ALTER SEQUENCE users_plants_id_seq OWNED BY users_plants.id;
 
 
 --
--- Name: users_tools; Type: TABLE; Schema: public; Owner: xanadu; Tablespace:
+-- Name: users_tools; Type: TABLE; Schema: public; Owner: Guest; Tablespace: 
 --
 
 CREATE TABLE users_tools (
@@ -284,10 +285,10 @@ CREATE TABLE users_tools (
 );
 
 
-ALTER TABLE users_tools OWNER TO xanadu;
+ALTER TABLE users_tools OWNER TO "Guest";
 
 --
--- Name: users_tools_id_seq; Type: SEQUENCE; Schema: public; Owner: xanadu
+-- Name: users_tools_id_seq; Type: SEQUENCE; Schema: public; Owner: Guest
 --
 
 CREATE SEQUENCE users_tools_id_seq
@@ -298,73 +299,73 @@ CREATE SEQUENCE users_tools_id_seq
     CACHE 1;
 
 
-ALTER TABLE users_tools_id_seq OWNER TO xanadu;
+ALTER TABLE users_tools_id_seq OWNER TO "Guest";
 
 --
--- Name: users_tools_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: xanadu
+-- Name: users_tools_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: Guest
 --
 
 ALTER SEQUENCE users_tools_id_seq OWNED BY users_tools.id;
 
 
 --
--- Name: id; Type: DEFAULT; Schema: public; Owner: xanadu
+-- Name: id; Type: DEFAULT; Schema: public; Owner: Guest
 --
 
 ALTER TABLE ONLY companions ALTER COLUMN id SET DEFAULT nextval('companions_id_seq'::regclass);
 
 
 --
--- Name: id; Type: DEFAULT; Schema: public; Owner: xanadu
+-- Name: id; Type: DEFAULT; Schema: public; Owner: Guest
 --
 
 ALTER TABLE ONLY nutrientneeds ALTER COLUMN id SET DEFAULT nextval('nutrientneeds_id_seq'::regclass);
 
 
 --
--- Name: id; Type: DEFAULT; Schema: public; Owner: xanadu
+-- Name: id; Type: DEFAULT; Schema: public; Owner: Guest
 --
 
 ALTER TABLE ONLY plants ALTER COLUMN id SET DEFAULT nextval('plants_id_seq'::regclass);
 
 
 --
--- Name: id; Type: DEFAULT; Schema: public; Owner: xanadu
+-- Name: id; Type: DEFAULT; Schema: public; Owner: Guest
 --
 
 ALTER TABLE ONLY plants_nutrientneeds ALTER COLUMN id SET DEFAULT nextval('plants_nutrientneeds_id_seq'::regclass);
 
 
 --
--- Name: id; Type: DEFAULT; Schema: public; Owner: xanadu
+-- Name: id; Type: DEFAULT; Schema: public; Owner: Guest
 --
 
 ALTER TABLE ONLY tools ALTER COLUMN id SET DEFAULT nextval('tools_id_seq'::regclass);
 
 
 --
--- Name: id; Type: DEFAULT; Schema: public; Owner: xanadu
+-- Name: id; Type: DEFAULT; Schema: public; Owner: Guest
 --
 
 ALTER TABLE ONLY users ALTER COLUMN id SET DEFAULT nextval('users_id_seq'::regclass);
 
 
 --
--- Name: id; Type: DEFAULT; Schema: public; Owner: xanadu
+-- Name: id; Type: DEFAULT; Schema: public; Owner: Guest
 --
 
 ALTER TABLE ONLY users_plants ALTER COLUMN id SET DEFAULT nextval('users_plants_id_seq'::regclass);
 
 
 --
--- Name: id; Type: DEFAULT; Schema: public; Owner: xanadu
+-- Name: id; Type: DEFAULT; Schema: public; Owner: Guest
 --
 
 ALTER TABLE ONLY users_tools ALTER COLUMN id SET DEFAULT nextval('users_tools_id_seq'::regclass);
 
 
 --
--- Data for Name: companions; Type: TABLE DATA; Schema: public; Owner: xanadu
+-- Data for Name: companions; Type: TABLE DATA; Schema: public; Owner: Guest
 --
 
 COPY companions (id, name, planting_season, health_benefits, other_uses, img_url) FROM stdin;
@@ -378,14 +379,14 @@ COPY companions (id, name, planting_season, health_benefits, other_uses, img_url
 
 
 --
--- Name: companions_id_seq; Type: SEQUENCE SET; Schema: public; Owner: xanadu
+-- Name: companions_id_seq; Type: SEQUENCE SET; Schema: public; Owner: Guest
 --
 
 SELECT pg_catalog.setval('companions_id_seq', 1, false);
 
 
 --
--- Data for Name: nutrientneeds; Type: TABLE DATA; Schema: public; Owner: xanadu
+-- Data for Name: nutrientneeds; Type: TABLE DATA; Schema: public; Owner: Guest
 --
 
 COPY nutrientneeds (id, description) FROM stdin;
@@ -406,14 +407,14 @@ COPY nutrientneeds (id, description) FROM stdin;
 
 
 --
--- Name: nutrientneeds_id_seq; Type: SEQUENCE SET; Schema: public; Owner: xanadu
+-- Name: nutrientneeds_id_seq; Type: SEQUENCE SET; Schema: public; Owner: Guest
 --
 
 SELECT pg_catalog.setval('nutrientneeds_id_seq', 1, false);
 
 
 --
--- Data for Name: plants; Type: TABLE DATA; Schema: public; Owner: xanadu
+-- Data for Name: plants; Type: TABLE DATA; Schema: public; Owner: Guest
 --
 
 COPY plants (id, plant_name, planting_season, img_url, health_benefits, companions, antagonists) FROM stdin;
@@ -436,14 +437,14 @@ COPY plants (id, plant_name, planting_season, img_url, health_benefits, companio
 
 
 --
--- Name: plants_id_seq; Type: SEQUENCE SET; Schema: public; Owner: xanadu
+-- Name: plants_id_seq; Type: SEQUENCE SET; Schema: public; Owner: Guest
 --
 
 SELECT pg_catalog.setval('plants_id_seq', 1, false);
 
 
 --
--- Data for Name: plants_nutrientneeds; Type: TABLE DATA; Schema: public; Owner: xanadu
+-- Data for Name: plants_nutrientneeds; Type: TABLE DATA; Schema: public; Owner: Guest
 --
 
 COPY plants_nutrientneeds (id, plant_id, nutrientproperty_id) FROM stdin;
@@ -496,64 +497,68 @@ COPY plants_nutrientneeds (id, plant_id, nutrientproperty_id) FROM stdin;
 
 
 --
--- Name: plants_nutrientneeds_id_seq; Type: SEQUENCE SET; Schema: public; Owner: xanadu
+-- Name: plants_nutrientneeds_id_seq; Type: SEQUENCE SET; Schema: public; Owner: Guest
 --
 
 SELECT pg_catalog.setval('plants_nutrientneeds_id_seq', 1, false);
 
 
 --
--- Data for Name: tools; Type: TABLE DATA; Schema: public; Owner: xanadu
+-- Data for Name: tools; Type: TABLE DATA; Schema: public; Owner: Guest
 --
 
-COPY tools (id, tool_name, img_url) FROM stdin;
-2	Phillips Head Screwdriver	img/Phillips-head-screwdriver.jpg
-3	Hammer	img/hammer.jpg
+COPY tools (id, tool_name, img_url, quantity) FROM stdin;
 \.
 
 
 --
--- Name: tools_id_seq; Type: SEQUENCE SET; Schema: public; Owner: xanadu
+-- Name: tools_id_seq; Type: SEQUENCE SET; Schema: public; Owner: Guest
 --
 
-SELECT pg_catalog.setval('tools_id_seq', 3, true);
+SELECT pg_catalog.setval('tools_id_seq', 1, false);
 
 
 --
--- Data for Name: users; Type: TABLE DATA; Schema: public; Owner: xanadu
+-- Data for Name: users; Type: TABLE DATA; Schema: public; Owner: Guest
 --
 
 COPY users (id, name, password) FROM stdin;
 1	chalmie	1234
+2	Michelle	333
+3	charles	123
 \.
 
 
 --
--- Name: users_id_seq; Type: SEQUENCE SET; Schema: public; Owner: xanadu
+-- Name: users_id_seq; Type: SEQUENCE SET; Schema: public; Owner: Guest
 --
 
-SELECT pg_catalog.setval('users_id_seq', 1, true);
+SELECT pg_catalog.setval('users_id_seq', 3, true);
 
 
 --
--- Data for Name: users_plants; Type: TABLE DATA; Schema: public; Owner: xanadu
+-- Data for Name: users_plants; Type: TABLE DATA; Schema: public; Owner: Guest
 --
 
 COPY users_plants (id, user_id, plant_id) FROM stdin;
 1	1	1
 2	1	2
+5	2	3
+8	2	10
+11	3	2
+12	3	3
 \.
 
 
 --
--- Name: users_plants_id_seq; Type: SEQUENCE SET; Schema: public; Owner: xanadu
+-- Name: users_plants_id_seq; Type: SEQUENCE SET; Schema: public; Owner: Guest
 --
 
-SELECT pg_catalog.setval('users_plants_id_seq', 2, true);
+SELECT pg_catalog.setval('users_plants_id_seq', 12, true);
 
 
 --
--- Data for Name: users_tools; Type: TABLE DATA; Schema: public; Owner: xanadu
+-- Data for Name: users_tools; Type: TABLE DATA; Schema: public; Owner: Guest
 --
 
 COPY users_tools (id, user_id, tool_id) FROM stdin;
@@ -561,14 +566,14 @@ COPY users_tools (id, user_id, tool_id) FROM stdin;
 
 
 --
--- Name: users_tools_id_seq; Type: SEQUENCE SET; Schema: public; Owner: xanadu
+-- Name: users_tools_id_seq; Type: SEQUENCE SET; Schema: public; Owner: Guest
 --
 
-SELECT pg_catalog.setval('users_tools_id_seq', 1, false);
+SELECT pg_catalog.setval('users_tools_id_seq', 9, true);
 
 
 --
--- Name: companions_pkey; Type: CONSTRAINT; Schema: public; Owner: xanadu; Tablespace:
+-- Name: companions_pkey; Type: CONSTRAINT; Schema: public; Owner: Guest; Tablespace: 
 --
 
 ALTER TABLE ONLY companions
@@ -576,7 +581,7 @@ ALTER TABLE ONLY companions
 
 
 --
--- Name: nutrientneeds_pkey; Type: CONSTRAINT; Schema: public; Owner: xanadu; Tablespace:
+-- Name: nutrientneeds_pkey; Type: CONSTRAINT; Schema: public; Owner: Guest; Tablespace: 
 --
 
 ALTER TABLE ONLY nutrientneeds
@@ -584,7 +589,7 @@ ALTER TABLE ONLY nutrientneeds
 
 
 --
--- Name: plants_nutrientneeds_pkey; Type: CONSTRAINT; Schema: public; Owner: xanadu; Tablespace:
+-- Name: plants_nutrientneeds_pkey; Type: CONSTRAINT; Schema: public; Owner: Guest; Tablespace: 
 --
 
 ALTER TABLE ONLY plants_nutrientneeds
@@ -592,7 +597,7 @@ ALTER TABLE ONLY plants_nutrientneeds
 
 
 --
--- Name: plants_pkey; Type: CONSTRAINT; Schema: public; Owner: xanadu; Tablespace:
+-- Name: plants_pkey; Type: CONSTRAINT; Schema: public; Owner: Guest; Tablespace: 
 --
 
 ALTER TABLE ONLY plants
@@ -600,7 +605,7 @@ ALTER TABLE ONLY plants
 
 
 --
--- Name: tools_pkey; Type: CONSTRAINT; Schema: public; Owner: xanadu; Tablespace:
+-- Name: tools_pkey; Type: CONSTRAINT; Schema: public; Owner: Guest; Tablespace: 
 --
 
 ALTER TABLE ONLY tools
@@ -608,7 +613,7 @@ ALTER TABLE ONLY tools
 
 
 --
--- Name: users_pkey; Type: CONSTRAINT; Schema: public; Owner: xanadu; Tablespace:
+-- Name: users_pkey; Type: CONSTRAINT; Schema: public; Owner: Guest; Tablespace: 
 --
 
 ALTER TABLE ONLY users
@@ -616,7 +621,7 @@ ALTER TABLE ONLY users
 
 
 --
--- Name: users_plants_pkey; Type: CONSTRAINT; Schema: public; Owner: xanadu; Tablespace:
+-- Name: users_plants_pkey; Type: CONSTRAINT; Schema: public; Owner: Guest; Tablespace: 
 --
 
 ALTER TABLE ONLY users_plants
@@ -624,7 +629,7 @@ ALTER TABLE ONLY users_plants
 
 
 --
--- Name: users_tools_pkey; Type: CONSTRAINT; Schema: public; Owner: xanadu; Tablespace:
+-- Name: users_tools_pkey; Type: CONSTRAINT; Schema: public; Owner: Guest; Tablespace: 
 --
 
 ALTER TABLE ONLY users_tools
@@ -632,15 +637,16 @@ ALTER TABLE ONLY users_tools
 
 
 --
--- Name: public; Type: ACL; Schema: -; Owner: xanadu
+-- Name: public; Type: ACL; Schema: -; Owner: epicodus
 --
 
 REVOKE ALL ON SCHEMA public FROM PUBLIC;
-REVOKE ALL ON SCHEMA public FROM xanadu;
-GRANT ALL ON SCHEMA public TO xanadu;
+REVOKE ALL ON SCHEMA public FROM epicodus;
+GRANT ALL ON SCHEMA public TO epicodus;
 GRANT ALL ON SCHEMA public TO PUBLIC;
 
 
 --
 -- PostgreSQL database dump complete
 --
+
