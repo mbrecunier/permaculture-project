@@ -74,7 +74,7 @@ public class UserTest {
   public void addTool_attachesToolToUser() {
     User testUser = new User("Michelle", "p@$$w0rd");
     testUser.save();
-    Tool testTool = new Tool("Hammer","http://hammer.com");
+    Tool testTool = new Tool("Hammer","http://hammer.com", 10);
     testTool.save();
     testUser.addTool(testTool.getId());
     assertTrue(testUser.getTools().contains(testTool));

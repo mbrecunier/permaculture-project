@@ -120,8 +120,10 @@ public class App {
       HashMap<String, Object> model = new HashMap<String, Object>();
       User currentUser = request.session().attribute("currentUser");
       int toolId = Integer.parseInt(request.queryParams("toolId"));
+      Tool newTool = Tool.find(toolId);
         if(currentUser != null) {
           currentUser.addTool(toolId);
+          newTool.subtractQuantity();
         }
       response.redirect("/tool-gallery");
       return null;
