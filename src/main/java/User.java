@@ -80,6 +80,16 @@ public class User {
     }
   }
 
+  public void removePlant(int plantId) {
+    try(Connection con = DB.sql2o.open()) {
+      String sql = "DELETE FROM users_plants WHERE user_id = :user_id AND plant_id = :plant_id;";
+      con.createQuery(sql)
+        .addParameter("user_id", this.id)
+        .addParameter("plant_id", plantId)
+        .executeUpdate();
+    }
+  }
+
   public List<Plant> getPlants() {
     try(Connection con = DB.sql2o.open()) {
       String sql = "SELECT plants.* FROM users JOIN users_plants ON users.id = users_plants.user_id JOIN plants ON users_plants.plant_id = plants.id WHERE user_id = :id";
