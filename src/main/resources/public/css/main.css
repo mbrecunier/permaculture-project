@@ -206,4 +206,19 @@ header {
     border: 1px solid black;
     z-index: 100; } }
 
+.return, .new, .WTFmichelle {
+  background-color: #685F18;
+  color: #AEBC99;
+  font-family: "Amatic SC", cursive;
+  font-weight: bolder;
+  font-size: 25px;
+  margin-top: 150px;
+  margin-left: 25px;
+  margin-right: 25px;
+  border-radius: 5px;
+  padding: 15px; }
+
+.new, .WTFmichelle {
+  margin-top: 20px; }
+
 /*# sourceMappingURL=main.css.map */
