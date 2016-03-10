@@ -123,7 +123,9 @@ public class App {
       User currentUser = request.session().attribute("currentUser");
       int toolId = Integer.parseInt(request.queryParams("toolId"));
         if(currentUser != null) {
-          currentUser.addTool(toolId);
+          if(!currentUser.getPlants().contains(Tool.find(toolId))) {
+            currentUser.addTool(toolId);
+          }
         }
       response.redirect("/tool-gallery");
       return null;
@@ -134,6 +136,15 @@ public class App {
       User currentUser = request.session().attribute("currentUser");
       int plantId = Integer.parseInt(request.queryParams("delete-plantId"));
       currentUser.removePlant(plantId);
+      response.redirect("/planter");
+      return null;
+    });
+
+    post("/remove-tool", (request, response) -> {
+      HashMap<String, Object> model = new HashMap<String, Object>();
+      User currentUser = request.session().attribute("currentUser");
+      int toolId = Integer.parseInt(request.queryParams("delete-toolId"));
+      currentUser.removeTool(toolId);
       response.redirect("/planter");
       return null;
     });
