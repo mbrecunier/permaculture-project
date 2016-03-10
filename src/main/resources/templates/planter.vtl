@@ -10,24 +10,16 @@
           <span>$plant.getName()</span><br/>
           <small>$plant.getPlantingSeason()</small>
         </div>
-        <div class="detailsBody">
-          <p>Health Benefits: $plant.getHealthBenefits()</p>
-          <p>Companions: $plant.getCompanions()</p>
-          <p>Antagonists: $plant.getAntagonists()</p>
-          <form id="delete-$plant.getName()" action="/remove-plant" method="post"><input type="hidden" name="delete-plantId" value="$plant.getId()"></form>
-        </div>
-      </div>
-<<<<<<< HEAD
       <div class="detailsBody">
         <p>$plant.getHealthBenefits()</p>
-        <p>$plant.getCompanions()</p>
-        <p>$plant.getAntagonists()</p>
-        <p>#foreach ($nutrient in $plant.getNutrients())
-            $nutrient.getDescription()
-            #end
+        <p>Companions: $plant.getCompanions()</p>
+        <p>Antagonists: $plant.getAntagonists()</p>
+        #foreach ($nutrient in $plant.getNutrients())
+        <p>$nutrient.getDescription()</p>
+
         <form id="delete-$plant.getName()" action="/remove-plant" method="post"><input type="hidden" name="delete-plantId" value="$plant.getId()"></form>
-=======
     </div>
+  #end
   #end
 
   #foreach ($tool in $currentUser.getTools())
@@ -42,7 +34,6 @@
         <div class="detailsBody">
           <form id="delete-$tool.getName()" action="/remove-tool" method="post"><input type="hidden" name="delete-toolId" value="$tool.getId()"></form>
         </div>
->>>>>>> e7a1a524ff434c63af37492ff2c16371b8411ff6
       </div>
     </div>
   #end
