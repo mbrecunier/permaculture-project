@@ -1,7 +1,3 @@
-#if(!$currentUser)
-  <h4>You must log in to add tools</h4>
-#end
-<h2>Tool Gallery</h2>
 <div class="galleryContainer">
   #foreach ($tool in $tools)
     #if ($tool.getQuantity() > 0)
