@@ -1,0 +1,22 @@
+
+.return {
+  background-color: $bgbeige;
+  color: $fontColor;
+  font-family: $font;
+  font-weight:bolder;
+  font-size: 25px;
+  margin-top: 150px;
+  margin-left: 25px;
+  margin-right: 25px;
+  border-radius: 5px;
+  padding: 15px;
+}
+
+.new {
+  @extend .return;
+  margin-top: 20px
+}
+
+.WTFmichelle {
+  @extend .new;
+}

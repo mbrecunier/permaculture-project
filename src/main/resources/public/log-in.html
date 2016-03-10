@@ -12,11 +12,12 @@
   <title>PDXPermacultureProject</title>
 
   <header>
+    <div class="world">
     <div class="mobileHead">
     <img id ="world" src="img/world.png">
       <p class="brokenPPP">PORTLAND<br>PERMACULTURE</br>PROJECT</p>
     </div>
-
+</div>
     <ul class="nav navbar-nav">
       <li class="dropdown">
         <a href="#" id="hamburger" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">☰</a>
@@ -28,7 +29,7 @@
           <li role="separator" class="divider"></li>
           <li><a href="#">Garden Tips</a></li>
           <li role="separator" class="divider"></li>
-          <li><a href="log-in.html">Login/New Users</a></li>
+          <li><a href="#">Login/New Users</a></li>
         </ul></li>
 
         <div class="expandedNav">
@@ -39,7 +40,7 @@
             <li role="separator" class="divider"></li>
             <li><a href="#">Garden Tips</a></li>
             <li role="separator" class="divider"></li>
-            <li><a href="log-in.html">Login/New Users</a></li>
+            <li><a href="#">Login/New Users</a></li>
             <li> <form action="/logout" method="post">
                 <a href id="logout">Logout</a>
               </form></li>
@@ -47,10 +48,52 @@
   </header>
 </head>
 <body class="body">
-  <div class="hero">
+
+
+<div class="loginForm">
+  <div class="return">
+    <h2>Returning User</h2>
+    <form action="/sign-in" method="post">
+      <div class="form-group">
+        <label for="name">User Name</label>
+        <select class="form-control" name="name" required>
+          #foreach($user in $allUsers)
+            <option value="$user.getId()">$user.getName()</option>
+          #end
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" required>
+      </div>
+      <button type="submit" id="sign-in">Log In</button>
+    </form>
   </div>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-    <script src="js/scripts.js"></script>
+
+  <div class="new">
+    <h2>New User</h2>
+    <form action="/new-user" method="post">
+      <div class="form-group">
+        <label for="new-name">User Name</label>
+        <input type="text" id="new-name" name="new-name" required>
+      </div>
+      <div class="form-group">
+        <label for="new-password">Password</label>
+        <input type="password" id="new-password" name="new-password" required>
+      </div>
+      <button type="submit" id="create-new-user">Create New User</button>
+    </form>
+  </div><br>
+
+  <div class="WTFmichelle">
+    #if ($loginFail)
+    <h4>User Name and Password do not match. Please try again.</h4>
+    #end
+  </div>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<script src="js/scripts.js"></script>
 </body>
 </html>

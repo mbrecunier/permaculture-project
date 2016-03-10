@@ -1,4 +1,3 @@
-@import url("https://fonts.googleapis.com/css?family=Raleway:400,700");
 *,
 *::before,
 *::after {
@@ -7,14 +6,10 @@
   box-sizing: border-box; }
 
 .body {
-  background-color: #AEBC99;
+  background-color: #eee0c8;
   height: 100vh;
   border-radius: 5px;
   overflow-x: hidden; }
-  @media (min-width: 768px) {
-    .body {
-      background-image: url("../img/leaf.png");
-      background-repeat: repeat; } }
 
 header {
   display: none; }
@@ -49,29 +44,27 @@ header {
     display: flex;
     flex-direction: column;
     top: 200px; }
-    header .mobileHead p {
-      font-family: "Lateef", cursive;
+    header .mobileHead .brokenPPP {
+      font-family: "Amatic SC", cursive;
       z-index: 100;
       flex: 1;
-      margin-top: -250px;
+      margin-top: -265px;
       text-align: center;
       color: #AEBC99;
-      font-size: 30pt;
+      font-size: 40pt;
       text-shadow: 2px 2px #681821; }
       @media (min-width: 768px) {
-        header .mobileHead p {
-          display: none;
-          font-size: 15pt;
+        header .mobileHead .brokenPPP {
+          font-size: 19pt;
           text-align: left;
-          margin-top: -72px;
-          margin-left: 90px; } }
-    header .mobileHead h3 {
-      display: none; }
+          margin-top: -76px;
+          margin-left: 90px;
+          line-height: 30px; } }
   header #hamburger {
     z-index: 1010;
     position: relative;
     margin-left: 30px;
-    margin-top: -380px;
+    margin-top: -415px;
     width: 36px;
     font-size: 30px;
     color: #681821;
@@ -112,25 +105,27 @@ header {
           display: flex;
           flex-direction: row;
           justify-content: space-around;
-          height: 30px;
+          height: 40px;
           border: 1pt solid #681821;
           width: 100vw;
-          top: 19.5px;
+          top: -5px;
           left: -11px;
           padding: 0;
           background-color: #AFA47E;
-          background-image: -webkit-linear-gradient(#AFA47E, #496818);
-          background-image: linear-gradient(#AFA47E, #496818);
+          background-image: -webkit-linear-gradient(#AFA47E, #AEBC99);
+          background-image: linear-gradient(#AFA47E, #AEBC99);
           background-color: #AFA47E;
-          background-image: -webkit-linear-gradient(-320deg, #AFA47E 0%, #496818 100%);
-          background-image: linear-gradient(50deg,#AFA47E 0%, #496818 100%); }
+          background-image: -webkit-linear-gradient(-320deg, #AFA47E 0%, #AEBC99 100%);
+          background-image: linear-gradient(50deg,#AFA47E 0%, #AEBC99 100%); }
           header .expandedNav ul li {
             list-style-type: none;
             padding-top: 4px; }
             header .expandedNav ul li a {
-              color: #AEBC99;
-              margin-top: 35px;
-              text-shadow: 1px 1px black; } }
+              font-weight: bolder;
+              font-family: "Amatic SC", cursive;
+              color: #681821;
+              font-size: 20px;
+              margin-top: 35px; } }
 
 .dropdown > a {
   transition: all 0.2s ease-in; }
@@ -149,9 +144,6 @@ header {
   flex-direction: row;
   justify-content: center;
   padding-top: 100px; }
-  @media (min-width: 768px) {
-    .galleryContainer {
-      padding-top: 140px; } }
   .galleryContainer .plantCard {
     font-family: "Raleway", "Helvetica Neue", Helvetica, Arial, sans-serif;
     position: relative;
@@ -161,13 +153,23 @@ header {
     border: 1px solid #496818;
     border-radius: 3px;
     margin: 10px; }
+    .galleryContainer .plantCard .deleteButt {
+      position: absolute;
+      background-color: #496818;
+      border: none;
+      outline: none;
+      border-radius: 3px; }
+      .galleryContainer .plantCard .deleteButt p {
+        margin: 0;
+        font-size: 11px;
+        color: #AEBC99; }
     .galleryContainer .plantCard .modal-content {
       margin-top: 200px; }
     .galleryContainer .plantCard #modalClickthru {
       outline: none; }
     .galleryContainer .plantCard .plantImg {
       width: 100%;
-      height: auto; }
+      height: 100%; }
       .galleryContainer .plantCard .plantImg:hover {
         opacity: 0.6; }
     .galleryContainer .plantCard .plantInfo {
@@ -197,10 +199,26 @@ header {
   .hero {
     display: flex;
     background: url("../img/hero.jpg") top center no-repeat;
-    height: 1000px;
+    height: 100vh;
     background-size: contain;
     position: relative;
-    top: 130px;
-    border: 10px solid red; } }
+    top: -5px;
+    border: 1px solid black;
+    z-index: 100; } }
+
+.return, .new, .WTFmichelle {
+  background-color: #685F18;
+  color: #AEBC99;
+  font-family: "Amatic SC", cursive;
+  font-weight: bolder;
+  font-size: 25px;
+  margin-top: 150px;
+  margin-left: 25px;
+  margin-right: 25px;
+  border-radius: 5px;
+  padding: 15px; }
+
+.new, .WTFmichelle {
+  margin-top: 20px; }
 
 /*# sourceMappingURL=main.css.map */
