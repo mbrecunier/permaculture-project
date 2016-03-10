@@ -10,14 +10,14 @@ SET check_function_bodies = false;
 SET client_min_messages = warning;
 
 --
--- Name: plpgsql; Type: EXTENSION; Schema: -; Owner: 
+-- Name: plpgsql; Type: EXTENSION; Schema: -; Owner:
 --
 
 CREATE EXTENSION IF NOT EXISTS plpgsql WITH SCHEMA pg_catalog;
 
 
 --
--- Name: EXTENSION plpgsql; Type: COMMENT; Schema: -; Owner: 
+-- Name: EXTENSION plpgsql; Type: COMMENT; Schema: -; Owner:
 --
 
 COMMENT ON EXTENSION plpgsql IS 'PL/pgSQL procedural language';
@@ -30,7 +30,7 @@ SET default_tablespace = '';
 SET default_with_oids = false;
 
 --
--- Name: companions; Type: TABLE; Schema: public; Owner: Guest; Tablespace: 
+-- Name: companions; Type: TABLE; Schema: public; Owner: Guest; Tablespace:
 --
 
 CREATE TABLE companions (
@@ -67,7 +67,7 @@ ALTER SEQUENCE companions_id_seq OWNED BY companions.id;
 
 
 --
--- Name: nutrientneeds; Type: TABLE; Schema: public; Owner: Guest; Tablespace: 
+-- Name: nutrientneeds; Type: TABLE; Schema: public; Owner: Guest; Tablespace:
 --
 
 CREATE TABLE nutrientneeds (
@@ -100,7 +100,7 @@ ALTER SEQUENCE nutrientneeds_id_seq OWNED BY nutrientneeds.id;
 
 
 --
--- Name: plants; Type: TABLE; Schema: public; Owner: Guest; Tablespace: 
+-- Name: plants; Type: TABLE; Schema: public; Owner: Guest; Tablespace:
 --
 
 CREATE TABLE plants (
@@ -138,7 +138,7 @@ ALTER SEQUENCE plants_id_seq OWNED BY plants.id;
 
 
 --
--- Name: plants_nutrientneeds; Type: TABLE; Schema: public; Owner: Guest; Tablespace: 
+-- Name: plants_nutrientneeds; Type: TABLE; Schema: public; Owner: Guest; Tablespace:
 --
 
 CREATE TABLE plants_nutrientneeds (
@@ -172,7 +172,7 @@ ALTER SEQUENCE plants_nutrientneeds_id_seq OWNED BY plants_nutrientneeds.id;
 
 
 --
--- Name: tools; Type: TABLE; Schema: public; Owner: Guest; Tablespace: 
+-- Name: tools; Type: TABLE; Schema: public; Owner: Guest; Tablespace:
 --
 
 CREATE TABLE tools (
@@ -207,7 +207,7 @@ ALTER SEQUENCE tools_id_seq OWNED BY tools.id;
 
 
 --
--- Name: users; Type: TABLE; Schema: public; Owner: Guest; Tablespace: 
+-- Name: users; Type: TABLE; Schema: public; Owner: Guest; Tablespace:
 --
 
 CREATE TABLE users (
@@ -241,7 +241,7 @@ ALTER SEQUENCE users_id_seq OWNED BY users.id;
 
 
 --
--- Name: users_plants; Type: TABLE; Schema: public; Owner: Guest; Tablespace: 
+-- Name: users_plants; Type: TABLE; Schema: public; Owner: Guest; Tablespace:
 --
 
 CREATE TABLE users_plants (
@@ -275,7 +275,7 @@ ALTER SEQUENCE users_plants_id_seq OWNED BY users_plants.id;
 
 
 --
--- Name: users_tools; Type: TABLE; Schema: public; Owner: Guest; Tablespace: 
+-- Name: users_tools; Type: TABLE; Schema: public; Owner: Guest; Tablespace:
 --
 
 CREATE TABLE users_tools (
@@ -423,7 +423,7 @@ COPY plants (id, plant_name, planting_season, img_url, health_benefits, companio
 3	kale	Early Spring and Late Fall	img/kale.jpg	Vitamin A: 206% of the RDA (from beta-carotene). Vitamin K: 684% of the RDA	Basil, Beans, Dill, Garlic, Lettuce, Marigold, Mint, Onion, Radish	Grapes, Rue, Tomatoes, Runner Beans
 4	broccoli	Early Spring and Fall	img/broccoli.jpg	Great source of vitamins K and C. Good source of folate.	Potatoes, Dill, Sage, Rosemary, Onions, Garlic, Beets, Bush Beans, Cucumber	Tomatoes, Pole/Runner Beans, Peppers, Strawberries
 5	beets	March/April	img/beets.jpg	Great source of vitamins C and Iron. Good source of magnesium.	Bush Beans, Dill, Lettuce, Onions, Garlic, Potatoes, Lettuce, Cabbages, 	Tomatoes
-6	lettuce	March/April	img/romainelettuce.jpg	\N	Carrots, Radishes, Cucumber, Strawberries, Beans, Beets, Corn, Onions	Celery, Parsely
+6	lettuce	March/April	img/romainelettuce.jpg	High in Vitamin A, Vitamin C. Good source of Magnesium, Calcium, Iron.	Carrots, Radishes, Cucumber, Strawberries, Beans, Beets, Corn, Onions	Celery, Parsely
 7	cucumber	Spring: no less than two week after last frost 	img/cucumber.jpg	Excellent source of vitamin K and molybdenum. They are also a very good source of the pantothenic acid and contain copper, potassium, manganese, vitamin C, phosphorus, magnesium, biotin, and vitamin B1	Beans, Corn, Carrots, Broccoli, Cauliflower, Parsnips	Potatoes, Sage
 8	carrots	April	img/carrot.jpg	Rich in vitamin A, Vitamin C, Vitamin K, vitamin B8, pantothenic acid, folate, potassium, iron, copper, and manganese	Lettuce, Chives, Leeks, Rosemary, Sage, Peas, Beans, Peppers	Strawberries, Fennel, Cabbage, Dill
 9	cauliflower	Fall 6-8 weeks before fall frost	img/cauliflower.jpg	Vitamin C, Vitamin K, protein, thiamin, riboflavin, niacin, magnesium	Basil, Bean, Dill, Garlic, Rosemary, Sage, Potatoes, Onions	Tomatoes, Pole/Runner Beans, Peppers, Strawberries
@@ -582,7 +582,7 @@ SELECT pg_catalog.setval('users_tools_id_seq', 9, true);
 
 
 --
--- Name: companions_pkey; Type: CONSTRAINT; Schema: public; Owner: Guest; Tablespace: 
+-- Name: companions_pkey; Type: CONSTRAINT; Schema: public; Owner: Guest; Tablespace:
 --
 
 ALTER TABLE ONLY companions
@@ -590,7 +590,7 @@ ALTER TABLE ONLY companions
 
 
 --
--- Name: nutrientneeds_pkey; Type: CONSTRAINT; Schema: public; Owner: Guest; Tablespace: 
+-- Name: nutrientneeds_pkey; Type: CONSTRAINT; Schema: public; Owner: Guest; Tablespace:
 --
 
 ALTER TABLE ONLY nutrientneeds
@@ -598,7 +598,7 @@ ALTER TABLE ONLY nutrientneeds
 
 
 --
--- Name: plants_nutrientneeds_pkey; Type: CONSTRAINT; Schema: public; Owner: Guest; Tablespace: 
+-- Name: plants_nutrientneeds_pkey; Type: CONSTRAINT; Schema: public; Owner: Guest; Tablespace:
 --
 
 ALTER TABLE ONLY plants_nutrientneeds
@@ -606,7 +606,7 @@ ALTER TABLE ONLY plants_nutrientneeds
 
 
 --
--- Name: plants_pkey; Type: CONSTRAINT; Schema: public; Owner: Guest; Tablespace: 
+-- Name: plants_pkey; Type: CONSTRAINT; Schema: public; Owner: Guest; Tablespace:
 --
 
 ALTER TABLE ONLY plants
@@ -614,7 +614,7 @@ ALTER TABLE ONLY plants
 
 
 --
--- Name: tools_pkey; Type: CONSTRAINT; Schema: public; Owner: Guest; Tablespace: 
+-- Name: tools_pkey; Type: CONSTRAINT; Schema: public; Owner: Guest; Tablespace:
 --
 
 ALTER TABLE ONLY tools
@@ -622,7 +622,7 @@ ALTER TABLE ONLY tools
 
 
 --
--- Name: users_pkey; Type: CONSTRAINT; Schema: public; Owner: Guest; Tablespace: 
+-- Name: users_pkey; Type: CONSTRAINT; Schema: public; Owner: Guest; Tablespace:
 --
 
 ALTER TABLE ONLY users
@@ -630,7 +630,7 @@ ALTER TABLE ONLY users
 
 
 --
--- Name: users_plants_pkey; Type: CONSTRAINT; Schema: public; Owner: Guest; Tablespace: 
+-- Name: users_plants_pkey; Type: CONSTRAINT; Schema: public; Owner: Guest; Tablespace:
 --
 
 ALTER TABLE ONLY users_plants
@@ -638,7 +638,7 @@ ALTER TABLE ONLY users_plants
 
 
 --
--- Name: users_tools_pkey; Type: CONSTRAINT; Schema: public; Owner: Guest; Tablespace: 
+-- Name: users_tools_pkey; Type: CONSTRAINT; Schema: public; Owner: Guest; Tablespace:
 --
 
 ALTER TABLE ONLY users_tools
@@ -658,4 +658,3 @@ GRANT ALL ON SCHEMA public TO PUBLIC;
 --
 -- PostgreSQL database dump complete
 --
-
