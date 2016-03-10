@@ -12,6 +12,9 @@
         <p>$plant.getHealthBenefits()</p>
         <p>$plant.getCompanions()</p>
         <p>$plant.getAntagonists()</p>
+        <p>#foreach ($nutrient in $plant.getNutrients())
+            $nutrient.getDescription()
+            #end
         <form id="delete-$plant.getName()" action="/remove-plant" method="post"><input type="hidden" name="delete-plantId" value="$plant.getId()"></form>
       </div>
     </div>

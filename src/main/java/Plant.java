@@ -96,5 +96,21 @@ public class Plant {
         .executeUpdate();
     }
   }
+ // // in Tags.java
+ //  public List<Recipe> getRecipes() {
+ //  try (Connection con = DB.sql2o.open()) {
+ //    String sql = "SELECT recipes.* FROM tags JOIN recipes_tags ON tags.id = recipes_tags.tag_id JOIN recipes ON recipes_tags.recipe_id = recipes.id WHERE tags.id = :id";
+ //    return con.createQuery(sql)
+ //      .addParameter("id", this.id)
+ //      .executeAndFetch(Recipe.class);
+
+  public List<Nutrient> getNutrients() {
+    try (Connection con = DB.sql2o.open()) {
+      String sql = "SELECT nutrientneeds.* FROM plants JOIN plants_nutrientneeds ON plants.id = plants_nutrientneeds.plant_id JOIN nutrientneeds ON plants_nutrientneeds.nutrientproperty_id = nutrientneeds.id WHERE plants.id = :id";
+      return con.createQuery(sql)
+        .addParameter("id", this.id)
+        .executeAndFetch(Nutrient.class);
+    }
+  }
 
 }
