@@ -83,14 +83,6 @@ public class App {
       return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());
 
-    get("/about", (request, response) -> {
-      HashMap<String, Object> model = new HashMap<String, Object>();
-      User currentUser = request.session().attribute("currentUser");
-      model.put("currentUser", currentUser);
-      model.put("template", "templates/about.vtl");
-      return new ModelAndView(model, layout);
-    }, new VelocityTemplateEngine());
-
     get("/tips", (request, response) -> {
       HashMap<String, Object> model = new HashMap<String, Object>();
       User currentUser = request.session().attribute("currentUser");
