@@ -16,10 +16,12 @@
         <p>Companions: $plant.getCompanions()</p>
         <p>Antagonists: $plant.getAntagonists()</p>
         <p>#foreach ($nutrient in $plant.getNutrients())
-            $nutrient.getDescription()
+            <p>$nutrient.getDescription()</p>
+            #end
         <form id="delete-$plant.getName()" action="/remove-plant" method="post"><input type="hidden" name="delete-plantId" value="$plant.getId()"></form>
     </div>
-    #end
+  </div>
+</div>
   #end
 
   #foreach ($tool in $currentUser.getTools())
