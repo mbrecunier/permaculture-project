@@ -109,6 +109,11 @@ header {
     @media (min-width: $break1) {
       display: none;
     }
+
+      a {
+        color: black;
+        padding-left: 25px;
+      }
   }
 
   .dropdown-menu {
